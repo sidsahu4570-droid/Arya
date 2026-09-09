@@ -1,0 +1,96 @@
+/* Serif & Headings */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Fluid Responsive Typography */
+h1, .text-hero {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+h2, .text-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+h3, .text-subheading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--accent-gold);
+}
+
+p, .text-body {
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.text-subtitle {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.text-rose {
+  color: var(--accent-rose);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 60%, var(--accent-gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-rose) 60%, var(--accent-gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle Badges */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(230, 200, 148, 0.07);
+  border: 1px solid var(--border-glass);
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
