@@ -1,124 +1,77 @@
-/* Glassmorphic Components & Glow Effects */
+/* Soft Translucent Romantic Surfaces & Link Buttons */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
-  padding: 2.25rem;
-  box-shadow: var(--shadow-subtle);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-romantic);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(230, 200, 148, 0.3), transparent);
 }
 
 .glass-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-glass-hover);
-  box-shadow: var(--shadow-glow), var(--shadow-subtle);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow), var(--shadow-romantic);
 }
 
-/* Glass Buttons */
-.btn-primary {
+/* Handwritten Link Buttons (Replacing rigid UI buttons) */
+.btn-romantic-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 0.9rem 2.2rem;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, rgba(230, 200, 148, 0.2) 0%, rgba(223, 158, 142, 0.15) 100%);
-  border: 1px solid rgba(230, 200, 148, 0.35);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(230, 200, 148, 0.1);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, rgba(230, 200, 148, 0.35) 0%, rgba(223, 158, 142, 0.25) 100%);
-  border-color: rgba(230, 200, 148, 0.6);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 0 25px rgba(230, 200, 148, 0.25);
-  transform: translateY(-2px);
-  color: #fff;
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border-glass);
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  color: var(--accent-blush);
+  font-family: var(--font-handwriting);
+  font-size: 1.45rem;
   cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  position: relative;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.btn-secondary:hover {
-  background: rgba(230, 200, 148, 0.08);
-  border-color: var(--border-glass-hover);
-  color: var(--accent-gold);
+.btn-romantic-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.8rem;
+  right: 0.8rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-rose), transparent);
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
 }
 
-/* Glass Tag / Chip */
-.glass-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-glass);
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+.btn-romantic-link:hover {
+  color: var(--accent-cream);
+  transform: translateY(-2px);
 }
 
-/* Responsive grid layouts */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+.btn-romantic-link:hover::after {
+  opacity: 1;
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Soft Paper Surface for Final Letter */
+.paper-letter-surface {
+  background: linear-gradient(145deg, #f8ede5 0%, #f0ded3 100%);
+  color: #26111a;
+  border-radius: var(--radius-md);
+  padding: 3.5rem 3rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(227, 184, 193, 0.2);
+  position: relative;
+  border: 1px solid rgba(248, 237, 229, 0.4);
 }
 
 @media (max-width: 640px) {
-  .grid-2, .grid-3 {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .paper-letter-surface {
+    padding: 2.25rem 1.5rem;
   }
   
   .glass-card {
-    padding: 1.5rem;
+    padding: 1.75rem 1.25rem;
   }
 }

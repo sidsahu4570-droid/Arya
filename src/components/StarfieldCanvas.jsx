@@ -18,7 +18,7 @@ export default function StarfieldCanvas() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Mouse position for subtle parallax
+    // Subtle mouse tracking for gentle romantic parallax
     let mouse = { x: width / 2, y: height / 2, targetX: width / 2, targetY: height / 2 };
     const handleMouseMove = (e) => {
       mouse.targetX = e.clientX;
@@ -26,97 +26,117 @@ export default function StarfieldCanvas() {
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Generate Stars
-    const numStars = Math.floor((width * height) / 4500);
-    const stars = Array.from({ length: numStars }, () => ({
+    // Generate Floating Candlelight Stardust Particles
+    const numParticles = Math.floor((width * height) / 7000);
+    const particles = Array.from({ length: numParticles }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 1.5 + 0.5,
-      baseAlpha: Math.random() * 0.7 + 0.3,
-      alpha: Math.random() * 0.7 + 0.3,
-      twinkleSpeed: (Math.random() * 0.02 + 0.005) * (Math.random() > 0.5 ? 1 : -1),
-      layer: Math.random() * 3 + 1, // 1 to 3 parallax layer
-      color: Math.random() > 0.3 ? '#f5f0eb' : Math.random() > 0.5 ? '#e6c894' : '#df9e8e'
+      size: Math.random() * 2 + 0.8,
+      alpha: Math.random() * 0.5 + 0.2,
+      pulseSpeed: Math.random() * 0.015 + 0.005,
+      layer: Math.random() * 2 + 1,
+      color: Math.random() > 0.4 ? '#f8ede5' : Math.random() > 0.5 ? '#e7b8c1' : '#c98291'
     }));
 
-    // Shooting stars
-    const shootingStars = [];
-    const createShootingStar = () => {
-      if (Math.random() < 0.03 && shootingStars.length < 2) {
-        shootingStars.push({
-          x: Math.random() * width,
-          y: Math.random() * (height / 2),
-          length: Math.random() * 80 + 40,
-          speed: Math.random() * 10 + 6,
-          angle: Math.PI / 4 + (Math.random() * 0.2 - 0.1),
-          opacity: 1
-        });
-      }
-    };
+    // Soft Bokeh Orbs
+    const numBokeh = 12;
+    const bokehOrbs = Array.from({ length: numBokeh }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      radius: Math.random() * 90 + 40,
+      alpha: Math.random() * 0.08 + 0.03,
+      speedX: (Math.random() - 0.5) * 0.3,
+      speedY: (Math.random() - 0.5) * 0.3,
+      color: Math.random() > 0.5 ? 'rgba(231, 184, 193, ' : 'rgba(125, 38, 59, '
+    }));
+
+    // Rose Petal Silhouettes
+    const numPetals = 8;
+    const petals = Array.from({ length: numPetals }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 12 + 8,
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.01,
+      speedY: Math.random() * 0.4 + 0.2,
+      speedX: Math.sin(Math.random() * Math.PI) * 0.3,
+      opacity: Math.random() * 0.35 + 0.15
+    }));
 
     const render = () => {
-      // Smooth mouse easing
-      mouse.x += (mouse.targetX - mouse.x) * 0.05;
-      mouse.y += (mouse.targetY - mouse.y) * 0.05;
+      mouse.x += (mouse.targetX - mouse.x) * 0.03;
+      mouse.y += (mouse.targetY - mouse.y) * 0.03;
 
-      const offsetX = (mouse.x - width / 2) * 0.02;
-      const offsetY = (mouse.y - height / 2) * 0.02;
+      const offsetX = (mouse.x - width / 2) * 0.015;
+      const offsetY = (mouse.y - height / 2) * 0.015;
 
       ctx.clearRect(0, 0, width, height);
 
-      // Render stars
-      stars.forEach((star) => {
-        star.alpha += star.twinkleSpeed;
-        if (star.alpha > 0.95 || star.alpha < 0.15) {
-          star.twinkleSpeed = -star.twinkleSpeed;
-        }
+      // Render Soft Bokeh Orbs
+      bokehOrbs.forEach((orb) => {
+        orb.x += orb.speedX;
+        orb.y += orb.speedY;
 
-        const px = star.x + offsetX * star.layer;
-        const py = star.y + offsetY * star.layer;
+        if (orb.x < -100) orb.x = width + 100;
+        if (orb.x > width + 100) orb.x = -100;
+        if (orb.y < -100) orb.y = height + 100;
+        if (orb.y > height + 100) orb.y = -100;
 
-        ctx.fillStyle = star.color;
-        ctx.globalAlpha = Math.max(0.1, Math.min(1, star.alpha));
+        const px = orb.x + offsetX * 0.5;
+        const py = orb.y + offsetY * 0.5;
+
+        const grad = ctx.createRadialGradient(px, py, 0, px, py, orb.radius);
+        grad.addColorStop(0, orb.color + orb.alpha + ')');
+        grad.addColorStop(1, orb.color + '0)');
+
+        ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.arc(px, py, star.size, 0, Math.PI * 2);
+        ctx.arc(px, py, orb.radius, 0, Math.PI * 2);
         ctx.fill();
-
-        // Subtle glow for larger stars
-        if (star.size > 1.2) {
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = star.color;
-        } else {
-          ctx.shadowBlur = 0;
-        }
       });
-      ctx.shadowBlur = 0;
 
-      // Shooting stars logic
-      createShootingStar();
-      for (let i = shootingStars.length - 1; i >= 0; i--) {
-        const ss = shootingStars[i];
-        ss.x += Math.cos(ss.angle) * ss.speed;
-        ss.y += Math.sin(ss.angle) * ss.speed;
-        ss.opacity -= 0.015;
-
-        if (ss.opacity <= 0 || ss.x > width || ss.y > height) {
-          shootingStars.splice(i, 1);
-          continue;
+      // Render Floating Dust Particles
+      particles.forEach((p) => {
+        p.alpha += p.pulseSpeed;
+        if (p.alpha > 0.7 || p.alpha < 0.15) {
+          p.pulseSpeed = -p.pulseSpeed;
         }
 
-        const tailX = ss.x - Math.cos(ss.angle) * ss.length;
-        const tailY = ss.y - Math.sin(ss.angle) * ss.length;
+        const px = p.x + offsetX * p.layer;
+        const py = p.y + offsetY * p.layer;
 
-        const grad = ctx.createLinearGradient(ss.x, ss.y, tailX, tailY);
-        grad.addColorStop(0, `rgba(230, 200, 148, ${ss.opacity})`);
-        grad.addColorStop(1, 'rgba(230, 200, 148, 0)');
-
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5;
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0.1, Math.min(0.8, p.alpha));
         ctx.beginPath();
-        ctx.moveTo(ss.x, ss.y);
-        ctx.lineTo(tailX, tailY);
-        ctx.stroke();
-      }
+        ctx.arc(px, py, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+
+      // Render Falling Rose Petals
+      petals.forEach((petal) => {
+        petal.y += petal.speedY;
+        petal.x += Math.sin(petal.y * 0.01) * 0.5;
+        petal.rotation += petal.rotationSpeed;
+
+        if (petal.y > height + 20) {
+          petal.y = -20;
+          petal.x = Math.random() * width;
+        }
+
+        ctx.save();
+        ctx.translate(petal.x + offsetX, petal.y + offsetY);
+        ctx.rotate(petal.rotation);
+        ctx.fillStyle = `rgba(201, 130, 145, ${petal.opacity})`;
+
+        // Simple organic petal path
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(-petal.size / 2, -petal.size, -petal.size, petal.size / 2, 0, petal.size);
+        ctx.bezierCurveTo(petal.size, petal.size / 2, petal.size / 2, -petal.size, 0, 0);
+        ctx.fill();
+        ctx.restore();
+      });
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -141,7 +161,7 @@ export default function StarfieldCanvas() {
         height: '100vh',
         pointerEvents: 'none',
         zIndex: 0,
-        opacity: 0.85
+        opacity: 0.9
       }}
     />
   );

@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader';
-import GlassCard from '../components/GlassCard';
-import { Unlock, Lock, Sparkles, Heart } from 'lucide-react';
+import { Unlock, Lock } from 'lucide-react';
 
 export default function FutureChaptersSection() {
   const chapters = [
@@ -35,48 +34,47 @@ export default function FutureChaptersSection() {
   return (
     <section id="future-chapters" className="section-container">
       <SectionHeader
-        badge="14. The Journey Ahead"
+        badge="the journey ahead"
         title="Waiting For The Vibes."
         subtitle="Chapter by chapter, without rushing."
       />
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '750px', margin: '0 auto' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', maxWidth: '750px', margin: '0 auto' }}>
         {chapters.map((chap, idx) => {
           const Icon = chap.icon;
           return (
-            <GlassCard
+            <motion.div
               key={idx}
-              delay={idx * 0.15}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.12 }}
               style={{
-                borderColor: chap.unlocked ? 'var(--border-glass-hover)' : 'rgba(255, 255, 255, 0.05)',
-                background: chap.unlocked ? 'var(--bg-card)' : 'rgba(12, 15, 22, 0.5)'
+                padding: '2rem',
+                borderRadius: 'var(--radius-md)',
+                background: chap.unlocked ? 'rgba(50, 19, 31, 0.65)' : 'rgba(22, 10, 16, 0.5)',
+                border: chap.unlocked ? '1px solid rgba(231, 184, 193, 0.25)' : '1px solid rgba(231, 184, 193, 0.1)'
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                <span
-                  className="badge-pill"
-                  style={{
-                    background: chap.unlocked ? 'rgba(230, 200, 148, 0.1)' : 'rgba(255, 255, 255, 0.04)',
-                    color: chap.unlocked ? 'var(--accent-gold)' : 'var(--text-muted)'
-                  }}
-                >
+                <span className="handwritten-note" style={{ fontSize: '1.35rem', color: chap.unlocked ? 'var(--accent-blush)' : 'var(--text-muted)' }}>
                   {chap.badge}
                 </span>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: chap.unlocked ? 'var(--accent-gold)' : 'var(--text-muted)', fontSize: '0.85rem' }}>
-                  <Icon size={16} />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: chap.unlocked ? 'var(--accent-blush)' : 'var(--text-muted)', fontSize: '0.85rem' }}>
+                  <Icon size={15} />
                   <span>{chap.status}</span>
                 </div>
               </div>
 
-              <h3 className="font-serif" style={{ fontSize: '1.4rem', color: chap.unlocked ? 'var(--text-primary)' : 'var(--text-muted)', marginBottom: '0.4rem' }}>
+              <h3 className="font-serif" style={{ fontSize: '1.5rem', color: chap.unlocked ? 'var(--text-primary)' : 'var(--text-muted)', marginBottom: '0.4rem', fontWeight: 500 }}>
                 {chap.title}
               </h3>
 
-              <p style={{ fontSize: '0.95rem', color: chap.unlocked ? 'var(--text-secondary)' : 'var(--text-muted)', margin: 0 }}>
+              <p style={{ fontSize: '0.98rem', color: chap.unlocked ? 'var(--text-secondary)' : 'var(--text-muted)', margin: 0, lineHeight: 1.65 }}>
                 {chap.desc}
               </p>
-            </GlassCard>
+            </motion.div>
           );
         })}
       </div>

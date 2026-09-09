@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader';
-import GlassCard from '../components/GlassCard';
-import { ArrowRight, Feather, Shield, Heart } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function YourFreedomSection() {
   const shifts = [
@@ -14,56 +13,53 @@ export default function YourFreedomSection() {
   return (
     <section id="your-freedom" className="section-container">
       <SectionHeader
-        badge="04. Freedom & Space"
+        badge="freedom & space"
         title="I Know You Need Your Space."
         subtitle="Affection without possessiveness."
       />
 
-      <GlassCard className="mb-10 text-center">
-        <div style={{ display: 'inline-flex', padding: '12px', borderRadius: '50%', background: 'rgba(230, 200, 148, 0.1)', color: 'var(--accent-gold)', marginBottom: '1.25rem' }}>
-          <Feather size={24} />
-        </div>
-
-        <p className="font-serif text-subtitle" style={{ fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '1.5rem', lineHeight: '1.8' }}>
+      <div className="glass-card mb-12 text-center" style={{ maxWidth: '800px', margin: '0 auto 3rem' }}>
+        <p className="font-serif text-subtitle" style={{ fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '1.5rem', lineHeight: '1.85' }}>
           "You once told me you don't like answering anyone about where you are, when you're going, or who you're with.<br /><br />
-          <span className="text-gold">I understand that.</span><br /><br />
+          <span className="text-gradient-rose" style={{ fontWeight: 500 }}>I understand that.</span><br /><br />
           I don't want to become another person you feel you have to report everything to.<br />
-          I want to be the person you <strong className="text-gradient-rose">WANT</strong> to tell things to."
+          I want to be the person you <strong className="text-blush">WANT</strong> to tell things to."
         </p>
 
-        <p className="text-muted font-serif" style={{ fontSize: '1.2rem', fontStyle: 'italic' }}>
+        <p className="handwritten-note" style={{ fontSize: '1.4rem', color: 'var(--accent-champagne)' }}>
           — There is a world of difference.
         </p>
-      </GlassCard>
+      </div>
 
-      {/* Interactive Shift Cards */}
-      <div style={{ maxWidth: '700px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      {/* Floating Shift Compositions */}
+      <div style={{ maxWidth: '680px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
         {shifts.map((item, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.15 }}
-            className="glass-card"
+            transition={{ duration: 0.6, delay: idx * 0.12 }}
             style={{
               padding: '1.25rem 1.75rem',
+              borderRadius: 'var(--radius-md)',
+              background: 'rgba(36, 13, 23, 0.6)',
+              border: '1px solid rgba(231, 184, 193, 0.2)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: '1rem',
-              background: 'rgba(18, 22, 32, 0.7)'
+              gap: '1rem'
             }}
           >
-            <div style={{ flex: 1, textDecoration: 'line-through', color: 'var(--text-muted)', fontSize: '1rem' }}>
+            <div style={{ flex: 1, textDecoration: 'line-through', color: 'var(--text-muted)', fontSize: '1.02rem' }}>
               {item.from}
             </div>
             
-            <div style={{ color: 'var(--accent-gold)', display: 'flex', alignItems: 'center' }}>
+            <div style={{ color: 'var(--accent-rose)', display: 'flex', alignItems: 'center' }}>
               <ArrowRight size={18} />
             </div>
 
-            <div style={{ flex: 1, textAlign: 'right', fontWeight: 600, color: 'var(--accent-gold-light)', fontSize: '1.1rem' }}>
+            <div style={{ flex: 1, textAlign: 'right', fontWeight: 500, color: 'var(--accent-cream)', fontSize: '1.15rem', fontFamily: 'var(--font-serif)' }}>
               {item.to}
             </div>
           </motion.div>

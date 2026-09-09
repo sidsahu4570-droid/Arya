@@ -1,4 +1,4 @@
-/* Serif & Headings */
+/* Font Helpers */
 .font-serif {
   font-family: var(--font-serif);
 }
@@ -9,88 +9,96 @@
 
 .font-handwriting {
   font-family: var(--font-handwriting);
+  font-size: 1.15em;
+  letter-spacing: 0.02em;
 }
 
-/* Fluid Responsive Typography */
+/* Fluid Typography */
 h1, .text-hero {
   font-family: var(--font-serif);
-  font-size: clamp(3.2rem, 8vw, 6.5rem);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  line-height: 1.1;
+  font-size: clamp(3.8rem, 10vw, 7.5rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.05;
   color: var(--text-primary);
+  text-shadow: 0 0 40px rgba(231, 184, 193, 0.25);
 }
 
 h2, .text-heading {
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 400;
   letter-spacing: 0.02em;
-  line-height: 1.25;
+  line-height: 1.2;
   color: var(--text-primary);
 }
 
 h3, .text-subheading {
   font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   font-weight: 400;
   line-height: 1.35;
-  color: var(--accent-gold);
+  color: var(--accent-blush);
 }
 
 p, .text-body {
-  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  font-size: clamp(1rem, 1.9vw, 1.18rem);
   color: var(--text-secondary);
-  line-height: 1.75;
+  line-height: 1.8;
   font-weight: 300;
 }
 
 .text-subtitle {
-  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
   color: var(--text-secondary);
   font-weight: 300;
-  letter-spacing: 0.01em;
-}
-
-.text-gold {
-  color: var(--accent-gold);
+  line-height: 1.7;
 }
 
 .text-rose {
   color: var(--accent-rose);
 }
 
-.text-muted {
-  color: var(--text-muted);
+.text-blush {
+  color: var(--accent-blush);
 }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 60%, var(--accent-gold-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.text-cream {
+  color: var(--text-primary);
+}
+
+.text-champagne {
+  color: var(--accent-champagne);
+}
+
+.text-muted {
+  color: rgba(231, 184, 193, 0.65);
 }
 
 .text-gradient-rose {
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-rose) 60%, var(--accent-gold-light) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blush) 60%, var(--accent-champagne) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Subtitle Badges */
-.badge-pill {
+/* Handwritten Note Annotation */
+.handwritten-note {
+  font-family: var(--font-handwriting);
+  color: var(--accent-blush);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-style: italic;
+  opacity: 0.9;
+  display: inline-block;
+}
+
+.badge-note {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 1rem;
-  border-radius: var(--radius-full);
-  background: rgba(230, 200, 148, 0.07);
-  border: 1px solid var(--border-glass);
-  color: var(--accent-gold);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 500;
-  backdrop-filter: blur(10px);
+  gap: 0.4rem;
+  font-family: var(--font-handwriting);
+  font-size: 1.2rem;
+  color: var(--accent-blush);
+  padding: 0.2rem 0;
+  border-bottom: 1px italic rgba(231, 184, 193, 0.3);
 }

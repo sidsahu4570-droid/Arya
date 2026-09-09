@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Sparkles } from 'lucide-react';
 
 export default function HeroSection() {
   const scrollToNext = () => {
@@ -24,16 +23,16 @@ export default function HeroSection() {
         zIndex: 2
       }}
     >
-      {/* Soft central glow */}
+      {/* Soft romantic rose glow */}
       <div
-        className="ambient-glow ambient-gold"
+        className="ambient-glow ambient-rose"
         style={{
-          width: '450px',
-          height: '450px',
+          width: '500px',
+          height: '500px',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 0.18
+          opacity: 0.2
         }}
       />
 
@@ -41,28 +40,49 @@ export default function HeroSection() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        style={{ marginBottom: '1.5rem' }}
+        style={{ marginBottom: '0.75rem' }}
       >
-        <span className="badge-pill">
-          <Sparkles size={13} /> Dedicated to Arya
+        <span className="handwritten-note" style={{ fontSize: '1.6rem', color: 'var(--accent-blush)' }}>
+          for you.
         </span>
       </motion.div>
 
-      <motion.h1
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
-        className="text-gradient-gold"
-        style={{
-          fontSize: 'clamp(4rem, 12vw, 8.5rem)',
-          letterSpacing: '0.08em',
-          fontWeight: 400,
-          textShadow: '0 0 50px rgba(230, 200, 148, 0.2)',
-          marginBottom: '1rem'
-        }}
+        style={{ position: 'relative', display: 'inline-block', marginBottom: '1.25rem' }}
       >
-        ARYA
-      </motion.h1>
+        <h1
+          className="text-gradient-rose"
+          style={{
+            fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
+            letterSpacing: '0.08em',
+            fontWeight: 400,
+            lineHeight: 1,
+            margin: 0
+          }}
+        >
+          ARYA
+        </h1>
+
+        {/* Subtle handwritten underline SVG */}
+        <svg
+          width="100%"
+          height="16"
+          viewBox="0 0 200 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ marginTop: '-10px', opacity: 0.7 }}
+        >
+          <path
+            d="M5 11C40 4 110 3 195 12"
+            stroke="var(--accent-rose)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+        </svg>
+      </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
@@ -70,12 +90,12 @@ export default function HeroSection() {
         transition={{ duration: 1, delay: 0.5 }}
         className="font-serif text-subtitle"
         style={{
-          fontSize: 'clamp(1.2rem, 3vw, 1.8rem)',
+          fontSize: 'clamp(1.25rem, 3vw, 1.85rem)',
           maxWidth: '650px',
-          color: 'var(--accent-gold-light)',
+          color: 'var(--text-primary)',
           fontStyle: 'italic',
           marginBottom: '1.25rem',
-          lineHeight: 1.4
+          lineHeight: 1.45
         }}
       >
         "Maybe this is nothing yet.<br />
@@ -89,10 +109,10 @@ export default function HeroSection() {
         style={{
           maxWidth: '540px',
           color: 'var(--text-secondary)',
-          fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)',
+          fontSize: 'clamp(0.98rem, 1.8vw, 1.12rem)',
           fontWeight: 300,
-          marginBottom: '3rem',
-          lineHeight: 1.6
+          marginBottom: '3.5rem',
+          lineHeight: 1.65
         }}
       >
         Some things aren't meant to be decided in one conversation.<br />
@@ -104,9 +124,8 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.1 }}
       >
-        <button onClick={scrollToNext} className="btn-primary">
-          <span>Read This</span>
-          <ChevronDown size={18} />
+        <button onClick={scrollToNext} className="btn-romantic-link">
+          <span>read my little story ↓</span>
         </button>
       </motion.div>
     </section>

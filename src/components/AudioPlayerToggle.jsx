@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Volume2, VolumeX } from 'lucide-react';
 
 export default function AudioPlayerToggle({ autoStart = false }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -10,15 +9,14 @@ export default function AudioPlayerToggle({ autoStart = false }) {
   const synthTimerRef = useRef(null);
   const masterGainRef = useRef(null);
 
-  // Ethereal romantic chord progression (Hz): Dmaj9 -> F#m7 -> Bm9 -> Gadd9
+  // Ethereal romantic chord progression
   const chords = [
-    [146.83, 220.00, 277.18, 369.99], // D3, A3, C#4, F#4
-    [185.00, 220.00, 277.18, 369.99], // F#3, A3, C#4, F#4
-    [123.47, 185.00, 220.00, 293.66], // B2, F#3, A3, D4
-    [196.00, 246.94, 293.66, 369.99]  // G3, B3, D4, F#4
+    [146.83, 220.00, 277.18, 369.99],
+    [185.00, 220.00, 277.18, 369.99],
+    [123.47, 185.00, 220.00, 293.66],
+    [196.00, 246.94, 293.66, 369.99]
   ];
 
-  // Synthesize soft romantic pad + piano notes if MP3 is missing
   const playSynthChord = (freqs, duration = 6.5) => {
     if (!audioCtxRef.current || audioCtxRef.current.state !== 'running') return;
     const ctx = audioCtxRef.current;
@@ -30,9 +28,8 @@ export default function AudioPlayerToggle({ autoStart = false }) {
 
       osc.type = 'sine';
       osc.frequency.setValueAtTime(freq, ctx.currentTime);
-
       filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(550, ctx.currentTime);
+      filter.frequency.setValueAtTime(520, ctx.currentTime);
 
       const now = ctx.currentTime;
       gain.gain.setValueAtTime(0.0001, now);
@@ -79,7 +76,6 @@ export default function AudioPlayerToggle({ autoStart = false }) {
     }
   };
 
-  // Start music (tries HTML5 MP3 first, falls back to Synth)
   const startMusic = async () => {
     if (audioRef.current) {
       try {
@@ -88,7 +84,6 @@ export default function AudioPlayerToggle({ autoStart = false }) {
         setIsPlaying(true);
         setUsingFallbackSynth(false);
       } catch (err) {
-        // If MP3 file is not found or fails to load, use synthesizer fallback cleanly
         startSynthLoop();
         setIsPlaying(true);
         setUsingFallbackSynth(true);
@@ -116,27 +111,22 @@ export default function AudioPlayerToggle({ autoStart = false }) {
     }
   };
 
-  // Trigger autoStart when user clicks "Enter" on intro modal
   useEffect(() => {
     if (autoStart) {
       startMusic();
     }
   }, [autoStart]);
 
-  // Smooth scroll volume management
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollRatio = scrollPos / (docHeight || 1);
 
-      let targetVol = 0.18; // Default standard volume
-
-      // Soft & intimate volume near final letter (bottom 25%)
+      let targetVol = 0.18;
       if (scrollRatio > 0.75) {
         targetVol = 0.12;
       } else if (scrollRatio > 0.4 && scrollRatio < 0.7) {
-        // Slightly fuller volume during emotional core sections
         targetVol = 0.22;
       }
 
@@ -154,60 +144,46 @@ export default function AudioPlayerToggle({ autoStart = false }) {
 
   return (
     <>
-      {/* HTML5 Audio element pointing to local MP3 asset */}
-      <audio
-        ref={audioRef}
-        src="/audio/romantic-instrumental.mp3"
-        loop
-        preload="auto"
-        onError={() => {
-          // Silent fallback setup
-        }}
-      />
+      <audio ref={audioRef} src="/audio/romantic-instrumental.mp3" loop preload="auto" />
 
-      {/* Top-Right Fixed Music Controls */}
+      {/* Floating Handwritten Style Control */}
       <div
         style={{
           position: 'fixed',
-          top: '20px',
+          top: '22px',
           right: '24px',
-          zIndex: 1000,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px'
+          zIndex: 1000
         }}
       >
         <button
           onClick={toggleMusic}
-          aria-label="Toggle romantic soundtrack"
+          aria-label="Toggle romantic music"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            padding: '8px 16px',
+            gap: '6px',
+            padding: '6px 14px',
             borderRadius: '9999px',
-            background: isPlaying ? 'rgba(230, 200, 148, 0.14)' : 'rgba(18, 22, 32, 0.8)',
-            border: '1px solid rgba(230, 200, 148, 0.25)',
+            background: isPlaying ? 'rgba(50, 19, 31, 0.75)' : 'rgba(22, 10, 16, 0.75)',
+            border: '1px solid rgba(231, 184, 193, 0.25)',
             backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            color: isPlaying ? 'var(--accent-gold-light)' : 'var(--text-secondary)',
-            fontSize: '0.85rem',
-            fontWeight: 500,
+            color: 'var(--accent-blush)',
+            fontFamily: 'var(--font-handwriting)',
+            fontSize: '1.2rem',
             cursor: 'pointer',
-            boxShadow: isPlaying ? '0 0 20px rgba(230, 200, 148, 0.2)' : '0 4px 15px rgba(0,0,0,0.4)',
+            boxShadow: '0 4px 15px rgba(0,0,0,0.4)',
             transition: 'all 0.3s ease'
           }}
         >
           {isPlaying ? (
             <>
-              <Volume2 size={15} className="text-gold" />
-              <span>♫ Music</span>
+              <span>♪ playing</span>
               <span
                 style={{
                   display: 'flex',
                   gap: '2px',
                   alignItems: 'flex-end',
-                  height: '11px',
+                  height: '10px',
                   marginLeft: '2px'
                 }}
               >
@@ -218,8 +194,7 @@ export default function AudioPlayerToggle({ autoStart = false }) {
             </>
           ) : (
             <>
-              <VolumeX size={15} />
-              <span>♫ Paused</span>
+              <span>♪ paused</span>
             </>
           )}
         </button>
@@ -228,12 +203,12 @@ export default function AudioPlayerToggle({ autoStart = false }) {
           .eq-bar {
             width: 2px;
             height: 100%;
-            background: var(--accent-gold);
+            background: var(--accent-blush);
             animation: eqWave 1.2s ease-in-out infinite alternate;
           }
           @keyframes eqWave {
             0% { height: 3px; }
-            100% { height: 11px; }
+            100% { height: 10px; }
           }
         `}</style>
       </div>

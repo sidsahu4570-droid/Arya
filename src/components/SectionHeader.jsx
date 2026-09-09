@@ -2,19 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function SectionHeader({ badge, title, subtitle, align = 'center' }) {
-  const alignClass = align === 'left' ? 'text-left' : align === 'right' ? 'text-right' : 'text-center';
-
   return (
-    <div className={`mb-12 ${alignClass}`} style={{ textAlign: align }}>
+    <div className={`mb-12 ${align === 'left' ? 'text-left' : 'text-center'}`} style={{ textAlign: align }}>
       {badge && (
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '1rem' }}
+          style={{ marginBottom: '0.6rem' }}
         >
-          <span className="badge-pill">{badge}</span>
+          <span className="handwritten-note" style={{ fontSize: '1.35rem' }}>
+            {badge}
+          </span>
         </motion.div>
       )}
 
@@ -24,7 +24,7 @@ export default function SectionHeader({ badge, title, subtitle, align = 'center'
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-heading text-gradient-gold"
+          className="text-heading text-gradient-rose"
           style={{ marginBottom: subtitle ? '0.75rem' : 0 }}
         >
           {title}
