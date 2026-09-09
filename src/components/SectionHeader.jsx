@@ -12,7 +12,7 @@ export default function SectionHeader({ badge, title, subtitle, align = 'center'
           transition={{ duration: 0.6 }}
           style={{ marginBottom: '0.6rem' }}
         >
-          <span className="handwritten-note" style={{ fontSize: '1.35rem' }}>
+          <span className="handwritten-note" style={{ fontSize: '1.4rem', color: 'var(--accent-rose)' }}>
             {badge}
           </span>
         </motion.div>
@@ -24,8 +24,14 @@ export default function SectionHeader({ badge, title, subtitle, align = 'center'
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-heading text-gradient-rose"
-          style={{ marginBottom: subtitle ? '0.75rem' : 0 }}
+          style={{
+            fontSize: 'clamp(2.2rem, 5.2vw, 3.8rem)',
+            color: 'var(--text-heading)',
+            fontFamily: 'var(--font-serif)',
+            fontWeight: 400,
+            lineHeight: 1.2,
+            marginBottom: subtitle ? '0.75rem' : 0
+          }}
         >
           {title}
         </motion.h2>
@@ -38,7 +44,7 @@ export default function SectionHeader({ badge, title, subtitle, align = 'center'
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-subtitle"
-          style={{ maxWidth: '650px', margin: align === 'center' ? '0 auto' : 0 }}
+          style={{ maxWidth: '650px', margin: align === 'center' ? '0 auto' : 0, color: 'var(--text-body)' }}
         >
           {subtitle}
         </motion.p>

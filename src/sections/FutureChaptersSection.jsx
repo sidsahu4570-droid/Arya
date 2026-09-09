@@ -52,26 +52,27 @@ export default function FutureChaptersSection() {
               style={{
                 padding: '2rem',
                 borderRadius: 'var(--radius-md)',
-                background: chap.unlocked ? 'rgba(50, 19, 31, 0.65)' : 'rgba(22, 10, 16, 0.5)',
-                border: chap.unlocked ? '1px solid rgba(231, 184, 193, 0.25)' : '1px solid rgba(231, 184, 193, 0.1)'
+                background: '#fffdfc',
+                border: chap.unlocked ? '1px solid rgba(217, 107, 131, 0.25)' : '1px solid rgba(217, 107, 131, 0.12)',
+                boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                <span className="handwritten-note" style={{ fontSize: '1.35rem', color: chap.unlocked ? 'var(--accent-blush)' : 'var(--text-muted)' }}>
+                <span className="handwritten-note" style={{ fontSize: '1.4rem', color: chap.unlocked ? 'var(--accent-rose)' : 'var(--text-muted)' }}>
                   {chap.badge}
                 </span>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: chap.unlocked ? 'var(--accent-blush)' : 'var(--text-muted)', fontSize: '0.85rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: chap.unlocked ? 'var(--accent-rose)' : 'var(--text-muted)', fontSize: '0.85rem' }}>
                   <Icon size={15} />
                   <span>{chap.status}</span>
                 </div>
               </div>
 
-              <h3 className="font-serif" style={{ fontSize: '1.5rem', color: chap.unlocked ? 'var(--text-primary)' : 'var(--text-muted)', marginBottom: '0.4rem', fontWeight: 500 }}>
+              <h3 className="font-serif" style={{ fontSize: '1.55rem', color: chap.unlocked ? 'var(--text-deep)' : 'var(--text-muted)', marginBottom: '0.4rem', fontWeight: 400 }}>
                 {chap.title}
               </h3>
 
-              <p style={{ fontSize: '0.98rem', color: chap.unlocked ? 'var(--text-secondary)' : 'var(--text-muted)', margin: 0, lineHeight: 1.65 }}>
+              <p style={{ fontSize: '0.98rem', color: chap.unlocked ? 'var(--text-body)' : 'var(--text-muted)', margin: 0, lineHeight: 1.65 }}>
                 {chap.desc}
               </p>
             </motion.div>

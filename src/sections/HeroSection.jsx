@@ -23,16 +23,16 @@ export default function HeroSection() {
         zIndex: 2
       }}
     >
-      {/* Soft romantic rose glow */}
+      {/* Soft warm blush light glow */}
       <div
         className="ambient-glow ambient-rose"
         style={{
-          width: '500px',
-          height: '500px',
+          width: '550px',
+          height: '550px',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 0.2
+          opacity: 0.4
         }}
       />
 
@@ -42,7 +42,7 @@ export default function HeroSection() {
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         style={{ marginBottom: '0.75rem' }}
       >
-        <span className="handwritten-note" style={{ fontSize: '1.6rem', color: 'var(--accent-blush)' }}>
+        <span className="handwritten-note" style={{ fontSize: '1.75rem', color: 'var(--accent-rose)' }}>
           for you.
         </span>
       </motion.div>
@@ -54,31 +54,31 @@ export default function HeroSection() {
         style={{ position: 'relative', display: 'inline-block', marginBottom: '1.25rem' }}
       >
         <h1
-          className="text-gradient-rose"
           style={{
             fontSize: 'clamp(4.5rem, 14vw, 9.5rem)',
             letterSpacing: '0.08em',
             fontWeight: 400,
             lineHeight: 1,
+            color: 'var(--text-heading)',
             margin: 0
           }}
         >
           ARYA
         </h1>
 
-        {/* Subtle handwritten underline SVG */}
+        {/* Subtle handwritten rose underline */}
         <svg
           width="100%"
-          height="16"
-          viewBox="0 0 200 16"
+          height="18"
+          viewBox="0 0 200 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ marginTop: '-10px', opacity: 0.7 }}
+          style={{ marginTop: '-10px', opacity: 0.8 }}
         >
           <path
-            d="M5 11C40 4 110 3 195 12"
+            d="M5 12C45 5 115 4 195 13"
             stroke="var(--accent-rose)"
-            strokeWidth="2.5"
+            strokeWidth="2.8"
             strokeLinecap="round"
           />
         </svg>
@@ -90,9 +90,9 @@ export default function HeroSection() {
         transition={{ duration: 1, delay: 0.5 }}
         className="font-serif text-subtitle"
         style={{
-          fontSize: 'clamp(1.25rem, 3vw, 1.85rem)',
+          fontSize: 'clamp(1.3rem, 3vw, 1.9rem)',
           maxWidth: '650px',
-          color: 'var(--text-primary)',
+          color: 'var(--text-deep)',
           fontStyle: 'italic',
           marginBottom: '1.25rem',
           lineHeight: 1.45
@@ -108,8 +108,8 @@ export default function HeroSection() {
         transition={{ duration: 1, delay: 0.8 }}
         style={{
           maxWidth: '540px',
-          color: 'var(--text-secondary)',
-          fontSize: 'clamp(0.98rem, 1.8vw, 1.12rem)',
+          color: 'var(--text-body)',
+          fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
           fontWeight: 300,
           marginBottom: '3.5rem',
           lineHeight: 1.65
@@ -124,7 +124,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.1 }}
       >
-        <button onClick={scrollToNext} className="btn-romantic-link">
+        <button onClick={scrollToNext} className="btn-romantic-link" style={{ fontSize: '1.5rem' }}>
           <span>read my little story ↓</span>
         </button>
       </motion.div>

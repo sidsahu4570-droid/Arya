@@ -47,15 +47,15 @@ export default function ThingsINoticeSection() {
             style={{
               padding: '1.75rem',
               borderRadius: 'var(--radius-md)',
-              background: 'rgba(50, 19, 31, 0.5)',
-              border: '1px solid rgba(231, 184, 193, 0.18)',
-              backdropFilter: 'blur(12px)'
+              background: '#fffdfc',
+              border: '1px solid rgba(217, 107, 131, 0.2)',
+              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
             }}
           >
-            <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.45rem', marginBottom: '0.4rem', fontWeight: 500 }}>
+            <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.5rem', marginBottom: '0.4rem', fontWeight: 400 }}>
               {item.title}
             </h3>
-            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.75 }}>
               {item.text}
             </p>
           </motion.div>
@@ -68,15 +68,15 @@ export default function ThingsINoticeSection() {
         style={{
           maxWidth: '750px',
           margin: '0 auto',
-          background: 'linear-gradient(135deg, rgba(69, 27, 41, 0.7) 0%, rgba(36, 13, 23, 0.8) 100%)',
-          borderColor: 'rgba(231, 184, 193, 0.3)'
+          background: '#fffdfc',
+          borderColor: 'rgba(217, 107, 131, 0.3)'
         }}
       >
-        <span className="handwritten-note mb-2" style={{ fontSize: '1.4rem', color: 'var(--accent-blush)' }}>
+        <span className="handwritten-note mb-2" style={{ fontSize: '1.5rem', color: 'var(--accent-rose)' }}>
           The Infamous Emoji Incident
         </span>
 
-        <p className="font-serif" style={{ fontSize: '1.35rem', color: 'var(--text-primary)', margin: '1rem 0' }}>
+        <p className="font-serif" style={{ fontSize: '1.35rem', color: 'var(--text-deep)', margin: '1rem 0' }}>
           "And apparently... one emoji can create an entire situation."
         </p>
 
@@ -89,19 +89,19 @@ export default function ThingsINoticeSection() {
               fontSize: '4.5rem',
               cursor: 'pointer',
               display: 'inline-block',
-              filter: 'drop-shadow(0 0 20px rgba(231, 184, 193, 0.3))',
+              filter: 'drop-shadow(0 0 20px rgba(246, 214, 221, 0.8))',
               userSelect: 'none'
             }}
           >
             {emojiState === 'angry' ? '😡' : '😂 🫂'}
           </motion.div>
-          <p className="handwritten-note" style={{ fontSize: '1.15rem', color: 'var(--text-muted)', marginTop: '0.4rem' }}>
+          <p className="handwritten-note" style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginTop: '0.4rem' }}>
             (tap the emoji to see what happened)
           </p>
         </div>
 
         {emojiState === 'angry' ? (
-          <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+          <p style={{ color: 'var(--text-body)', fontStyle: 'italic' }}>
             "You thought I was angry at you. I was just texting normally!"
           </p>
         ) : (
@@ -110,10 +110,10 @@ export default function ThingsINoticeSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <p className="text-blush" style={{ fontSize: '1.15rem', fontWeight: 500 }}>
+            <p className="text-rose" style={{ fontSize: '1.15rem', fontWeight: 500 }}>
               "That emoji was innocent. The consequences were not. 😂"
             </p>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', marginTop: '0.4rem' }}>
+            <p style={{ color: 'var(--text-body)', fontSize: '0.98rem', marginTop: '0.4rem' }}>
               And yes... I learned my lesson. Never sending that emoji again! 🤝
             </p>
           </motion.div>

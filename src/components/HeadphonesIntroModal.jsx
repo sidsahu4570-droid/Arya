@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Headphones, Sparkles, Heart } from 'lucide-react';
+import { Headphones } from 'lucide-react';
 
 export default function HeadphonesIntroModal({ onEnter }) {
   return (
@@ -11,9 +11,9 @@ export default function HeadphonesIntroModal({ onEnter }) {
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
-        background: 'rgba(22, 10, 16, 0.96)',
-        backdropFilter: 'blur(25px)',
-        WebkitBackdropFilter: 'blur(25px)',
+        background: 'rgba(255, 247, 245, 0.95)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -30,15 +30,15 @@ export default function HeadphonesIntroModal({ onEnter }) {
           width: '100%',
           padding: '3.5rem 2.25rem',
           borderRadius: 'var(--radius-lg)',
-          background: 'rgba(50, 19, 31, 0.75)',
-          border: '1px solid rgba(231, 184, 193, 0.25)',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(125, 38, 59, 0.25)',
+          background: '#fffdfc',
+          border: '1px solid rgba(217, 107, 131, 0.25)',
+          boxShadow: '0 20px 50px rgba(74, 39, 48, 0.1), 0 5px 15px rgba(217, 107, 131, 0.08)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center'
         }}
       >
-        <span className="handwritten-note mb-2" style={{ fontSize: '1.4rem' }}>
+        <span className="handwritten-note mb-2" style={{ fontSize: '1.5rem', color: 'var(--accent-rose)' }}>
           for you.
         </span>
 
@@ -49,14 +49,14 @@ export default function HeadphonesIntroModal({ onEnter }) {
             width: '60px',
             height: '60px',
             borderRadius: '50%',
-            background: 'rgba(231, 184, 193, 0.12)',
-            border: '1px solid var(--accent-blush)',
+            background: 'rgba(246, 214, 221, 0.5)',
+            border: '1px solid var(--accent-dusty)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: 'var(--accent-blush)',
+            color: 'var(--accent-rose)',
             margin: '1.25rem 0',
-            boxShadow: '0 0 25px rgba(231, 184, 193, 0.2)'
+            boxShadow: '0 0 25px rgba(246, 214, 221, 0.6)'
           }}
         >
           <Headphones size={26} />
@@ -66,11 +66,11 @@ export default function HeadphonesIntroModal({ onEnter }) {
           Put your headphones on. 🤍
         </h2>
 
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: 1.7, marginBottom: '2.25rem', maxWidth: '340px' }}>
-          One little thing before you begin... put on your headphones for the soundtrack.
+        <p style={{ color: 'var(--text-body)', fontSize: '0.98rem', lineHeight: 1.7, marginBottom: '2.25rem', maxWidth: '340px' }}>
+          One little thing before you begin... put on your headphones for the romantic soundtrack.
         </p>
 
-        <button onClick={onEnter} className="btn-romantic-link" style={{ fontSize: '1.5rem', color: 'var(--accent-cream)' }}>
+        <button onClick={onEnter} className="btn-romantic-link" style={{ fontSize: '1.5rem', color: 'var(--text-deep)' }}>
           <span>open the letter →</span>
         </button>
       </motion.div>

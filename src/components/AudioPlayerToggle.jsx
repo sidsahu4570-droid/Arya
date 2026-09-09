@@ -29,7 +29,7 @@ export default function AudioPlayerToggle({ autoStart = false }) {
       osc.type = 'sine';
       osc.frequency.setValueAtTime(freq, ctx.currentTime);
       filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(520, ctx.currentTime);
+      filter.frequency.setValueAtTime(560, ctx.currentTime);
 
       const now = ctx.currentTime;
       gain.gain.setValueAtTime(0.0001, now);
@@ -146,7 +146,7 @@ export default function AudioPlayerToggle({ autoStart = false }) {
     <>
       <audio ref={audioRef} src="/audio/romantic-instrumental.mp3" loop preload="auto" />
 
-      {/* Floating Handwritten Style Control */}
+      {/* Floating Light Pill Control */}
       <div
         style={{
           position: 'fixed',
@@ -164,14 +164,14 @@ export default function AudioPlayerToggle({ autoStart = false }) {
             gap: '6px',
             padding: '6px 14px',
             borderRadius: '9999px',
-            background: isPlaying ? 'rgba(50, 19, 31, 0.75)' : 'rgba(22, 10, 16, 0.75)',
-            border: '1px solid rgba(231, 184, 193, 0.25)',
+            background: 'rgba(255, 253, 252, 0.9)',
+            border: '1px solid rgba(217, 107, 131, 0.3)',
             backdropFilter: 'blur(16px)',
-            color: 'var(--accent-blush)',
+            color: 'var(--text-deep)',
             fontFamily: 'var(--font-handwriting)',
-            fontSize: '1.2rem',
+            fontSize: '1.25rem',
             cursor: 'pointer',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.4)',
+            boxShadow: '0 4px 15px rgba(100, 40, 55, 0.08)',
             transition: 'all 0.3s ease'
           }}
         >
@@ -203,7 +203,7 @@ export default function AudioPlayerToggle({ autoStart = false }) {
           .eq-bar {
             width: 2px;
             height: 100%;
-            background: var(--accent-blush);
+            background: var(--accent-rose);
             animation: eqWave 1.2s ease-in-out infinite alternate;
           }
           @keyframes eqWave {

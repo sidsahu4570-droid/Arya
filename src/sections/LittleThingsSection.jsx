@@ -49,16 +49,16 @@ export default function LittleThingsSection() {
               flexShrink: 0,
               padding: '1.75rem',
               borderRadius: 'var(--radius-md)',
-              background: 'rgba(50, 19, 31, 0.65)',
-              border: '1px solid rgba(231, 184, 193, 0.2)',
+              background: '#fffdfc',
+              border: '1px solid rgba(217, 107, 131, 0.2)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.4)'
+              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
             }}
           >
             <div>
-              <span className="handwritten-note" style={{ fontSize: '1.2rem', color: 'var(--accent-blush)', display: 'block', marginBottom: '0.5rem' }}>
+              <span className="handwritten-note" style={{ fontSize: '1.25rem', color: 'var(--accent-rose)', display: 'block', marginBottom: '0.5rem' }}>
                 {item.sub}
               </span>
               <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.45rem', marginBottom: 0 }}>

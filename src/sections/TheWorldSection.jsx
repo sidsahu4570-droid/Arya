@@ -53,19 +53,19 @@ export default function TheWorldSection() {
       <div
         className="glass-card mb-12"
         style={{
-          background: 'linear-gradient(135deg, rgba(69, 27, 41, 0.75) 0%, rgba(36, 13, 23, 0.85) 100%)',
+          background: '#fffdfc',
           borderColor: 'var(--accent-rose)'
         }}
       >
-        <span className="handwritten-note mb-2" style={{ fontSize: '1.4rem', color: 'var(--accent-champagne)' }}>
+        <span className="handwritten-note mb-2" style={{ fontSize: '1.45rem', color: 'var(--accent-rose)' }}>
           Special Spotlight: Monaco 🇲🇨
         </span>
-        <h3 className="font-serif text-gradient-rose" style={{ fontSize: '2rem', marginBottom: '0.75rem', fontWeight: 500 }}>
+        <h3 className="font-serif text-gradient-rose" style={{ fontSize: '2rem', marginBottom: '0.75rem', fontWeight: 400 }}>
           Monaco
         </h3>
-        <p className="font-serif text-subtitle" style={{ fontSize: '1.3rem', color: 'var(--text-primary)', lineHeight: 1.85, margin: 0 }}>
+        <p className="font-serif text-subtitle" style={{ fontSize: '1.3rem', color: 'var(--text-deep)', lineHeight: 1.85, margin: 0 }}>
           "Because I already know exactly what would happen there:<br />
-          <strong className="text-blush font-serif" style={{ fontSize: '1.45rem' }}>You'd look at the cars. I'd look at you looking at the cars.</strong><br />
+          <strong className="text-rose font-serif" style={{ fontSize: '1.45rem' }}>You'd look at the cars. I'd look at you looking at the cars.</strong><br />
           And yes, we'd probably spend half the trip talking about which one we'd take home."
         </p>
       </div>
@@ -78,20 +78,20 @@ export default function TheWorldSection() {
             style={{
               padding: '1.5rem',
               borderRadius: 'var(--radius-md)',
-              background: 'rgba(36, 13, 23, 0.55)',
-              border: '1px solid rgba(231, 184, 193, 0.15)',
-              backdropFilter: 'blur(10px)'
+              background: '#fffdfc',
+              border: '1px solid rgba(217, 107, 131, 0.2)',
+              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem' }}>
               <h4 className="font-serif text-gradient-rose" style={{ fontSize: '1.35rem', margin: 0, fontWeight: 500 }}>
                 {loc.name}
               </h4>
-              <span className="handwritten-note" style={{ fontSize: '1.1rem', color: 'var(--text-muted)' }}>
+              <span className="handwritten-note" style={{ fontSize: '1.15rem', color: 'var(--text-muted)' }}>
                 {loc.tag}
               </span>
             </div>
-            <p style={{ fontSize: '0.94rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65 }}>
+            <p style={{ fontSize: '0.96rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.65 }}>
               {loc.description}
             </p>
           </div>

@@ -59,7 +59,7 @@ export default function HowItStartedSection() {
 
       {/* Intro Narrative Quote */}
       <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 4rem' }}>
-        <p className="font-serif text-subtitle" style={{ fontSize: '1.3rem', color: 'var(--text-primary)', lineHeight: '1.8' }}>
+        <p className="font-serif text-subtitle" style={{ fontSize: '1.35rem', color: 'var(--text-deep)', lineHeight: '1.85' }}>
           "You came to me for a job. I took your interview. Everything went well. You started working with me...<br /><br />
           And somewhere between conversations about work, random messages, late replies, lunches, dinners, gym, and all those little moments...<br />
           <span className="text-gradient-rose font-serif" style={{ fontSize: '1.45rem' }}>I started seeing you differently."</span>
@@ -70,17 +70,18 @@ export default function HowItStartedSection() {
       <div
         className="glass-card mb-20"
         style={{
-          background: 'rgba(50, 19, 31, 0.65)',
-          borderColor: 'rgba(231, 184, 193, 0.25)',
+          background: '#fffdfc',
+          borderColor: 'rgba(217, 107, 131, 0.25)',
           maxWidth: '750px',
-          margin: '0 auto 5rem'
+          margin: '0 auto 5rem',
+          boxShadow: '0 15px 40px rgba(100, 40, 55, 0.08)'
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-          <span className="handwritten-note" style={{ fontSize: '1.4rem' }}>
+          <span className="handwritten-note" style={{ fontSize: '1.5rem', color: 'var(--accent-rose)' }}>
             That One Google Meet Call...
           </span>
-          <h3 className="font-serif text-gradient-rose" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginTop: '0.4rem' }}>
+          <h3 className="font-serif text-gradient-rose" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginTop: '0.3rem' }}>
             "And then there was Instagram..."
           </h3>
         </div>
@@ -90,30 +91,30 @@ export default function HowItStartedSection() {
           style={{
             maxWidth: '540px',
             margin: '0 auto 2rem',
-            background: 'rgba(22, 10, 16, 0.65)',
+            background: 'rgba(253, 236, 239, 0.65)',
             borderRadius: 'var(--radius-md)',
-            border: '1px solid var(--border-glass)',
+            border: '1px solid rgba(217, 107, 131, 0.2)',
             padding: '1.5rem',
             display: 'flex',
             flexDirection: 'column',
             gap: '1rem'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--accent-blush)', fontSize: '0.9rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--accent-rose)', fontSize: '0.9rem' }}>
             <Video size={16} />
             <span>Google Meet • CRM Explanation Call</span>
           </div>
 
           <div style={{ alignSelf: 'flex-start', maxWidth: '82%' }}>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px' }}>Siddharth</div>
-            <div style={{ background: 'rgba(231, 184, 193, 0.12)', border: '1px solid rgba(231, 184, 193, 0.25)', padding: '0.7rem 1rem', borderRadius: '14px 14px 14px 4px', color: 'var(--text-primary)', fontSize: '0.95rem' }}>
+            <div style={{ background: '#fffdfc', border: '1px solid rgba(217, 107, 131, 0.25)', padding: '0.7rem 1rem', borderRadius: '14px 14px 14px 4px', color: 'var(--text-deep)', fontSize: '0.95rem' }}>
               "Waise... Instagram ID?"
             </div>
           </div>
 
           <div style={{ alignSelf: 'flex-end', maxWidth: '82%' }}>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px', textAlign: 'right' }}>Arya</div>
-            <div style={{ background: 'rgba(125, 38, 59, 0.3)', border: '1px solid rgba(125, 38, 59, 0.5)', padding: '0.7rem 1rem', borderRadius: '14px 14px 4px 14px', color: 'var(--text-primary)', fontSize: '0.95rem' }}>
+            <div style={{ background: 'rgba(246, 214, 221, 0.7)', border: '1px solid rgba(217, 107, 131, 0.3)', padding: '0.7rem 1rem', borderRadius: '14px 14px 4px 14px', color: 'var(--text-deep)', fontSize: '0.95rem' }}>
               "Nope. 😌"
             </div>
           </div>
@@ -124,19 +125,19 @@ export default function HowItStartedSection() {
 
           <div style={{ alignSelf: 'flex-start', maxWidth: '82%' }}>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px' }}>Siddharth (A few days later)</div>
-            <div style={{ background: 'rgba(231, 184, 193, 0.12)', border: '1px solid rgba(231, 184, 193, 0.25)', padding: '0.7rem 1rem', borderRadius: '14px 14px 14px 4px', color: 'var(--text-primary)', fontSize: '0.95rem' }}>
+            <div style={{ background: '#fffdfc', border: '1px solid rgba(217, 107, 131, 0.25)', padding: '0.7rem 1rem', borderRadius: '14px 14px 14px 4px', color: 'var(--text-deep)', fontSize: '0.95rem' }}>
               "Ab Instagram ID mil sakti hai?"
             </div>
           </div>
 
           <div style={{ alignSelf: 'flex-end', maxWidth: '82%' }}>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px', textAlign: 'right' }}>Arya</div>
-            <div style={{ background: 'rgba(201, 130, 145, 0.25)', border: '1px solid rgba(201, 130, 145, 0.4)', padding: '0.7rem 1rem', borderRadius: '14px 14px 4px 14px', color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 500 }}>
+            <div style={{ background: 'rgba(217, 107, 131, 0.2)', border: '1px solid rgba(217, 107, 131, 0.4)', padding: '0.7rem 1rem', borderRadius: '14px 14px 4px 14px', color: 'var(--text-deep)', fontSize: '0.95rem', fontWeight: 500 }}>
               "Okay... here you go."
             </div>
           </div>
 
-          <div style={{ textAlign: 'center', padding: '0.6rem', background: 'rgba(231, 184, 193, 0.08)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--accent-rose)', color: 'var(--accent-blush)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+          <div style={{ textAlign: 'center', padding: '0.6rem', background: '#fffdfc', borderRadius: 'var(--radius-sm)', border: '1px solid var(--accent-rose)', color: 'var(--accent-rose)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
             <Unlock size={15} />
             <span>Instagram Unlocked. 😂</span>
           </div>
@@ -144,18 +145,18 @@ export default function HowItStartedSection() {
 
         {/* Text Reflection */}
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <p className="font-serif text-subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-primary)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+          <p className="font-serif text-subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-deep)', lineHeight: 1.85, marginBottom: '1.25rem' }}>
             "I asked once. You said no.<br />
             I didn't push you then.<br />
             A few days later, I asked again...<br />
             <span className="text-gradient-rose font-serif" style={{ fontSize: '1.35rem' }}>and this time, you shared it with me.</span>"
           </p>
 
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+          <p style={{ color: 'var(--text-body)', fontSize: '1rem', lineHeight: 1.75, marginBottom: '1.25rem' }}>
             Maybe it was just Instagram. But somehow, that tiny little thing still made me smile.
           </p>
 
-          <span className="handwritten-note" style={{ fontSize: '1.3rem', color: 'var(--accent-champagne)' }}>
+          <span className="handwritten-note" style={{ fontSize: '1.35rem', color: 'var(--accent-rose)' }}>
             CRM ➔ Google Meet ➔ Instagram — Funny how something that started with work slowly became a little more personal. 😂
           </span>
         </div>
@@ -172,7 +173,7 @@ export default function HowItStartedSection() {
             transition={{ duration: 0.7, delay: idx * 0.08 }}
             style={{
               paddingLeft: '1.5rem',
-              borderLeft: '2px solid rgba(231, 184, 193, 0.2)',
+              borderLeft: '2px solid rgba(217, 107, 131, 0.25)',
               position: 'relative'
             }}
           >
@@ -181,10 +182,10 @@ export default function HowItStartedSection() {
             <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem', marginBottom: '0.3rem', flexWrap: 'wrap' }}>
               <span className="font-serif text-muted" style={{ fontSize: '1.1rem', fontWeight: 600 }}>{entry.num}</span>
               <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.5rem', margin: 0 }}>{entry.title}</h3>
-              <span className="handwritten-note" style={{ fontSize: '1.25rem', color: 'var(--accent-blush)' }}>{entry.note}</span>
+              <span className="handwritten-note" style={{ fontSize: '1.3rem', color: 'var(--accent-rose)' }}>{entry.note}</span>
             </div>
 
-            <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.75 }}>
               {entry.text}
             </p>
           </motion.div>

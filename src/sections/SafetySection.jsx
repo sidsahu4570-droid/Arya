@@ -11,19 +11,19 @@ export default function SafetySection() {
         subtitle="A quiet promise of presence."
       />
 
-      <div className="glass-card text-center" style={{ maxWidth: '800px', margin: '0 auto', background: 'rgba(50, 19, 31, 0.75)' }}>
-        <span className="handwritten-note mb-2" style={{ fontSize: '1.4rem', color: 'var(--accent-blush)' }}>
+      <div className="glass-card text-center" style={{ maxWidth: '800px', margin: '0 auto', background: '#fffdfc' }}>
+        <span className="handwritten-note mb-2" style={{ fontSize: '1.45rem', color: 'var(--accent-rose)' }}>
           "I want you to feel safe with me."
         </span>
 
-        <p className="font-serif text-subtitle" style={{ fontSize: '1.35rem', color: 'var(--text-primary)', lineHeight: 1.85, marginBottom: '1.75rem' }}>
+        <p className="font-serif text-subtitle" style={{ fontSize: '1.35rem', color: 'var(--text-deep)', lineHeight: 1.85, marginBottom: '1.75rem' }}>
           "I know there are things you're afraid of. I know life isn't always simple.<br /><br />
           I can't promise that nothing bad will ever happen.<br />
           <span className="text-gradient-rose font-serif" style={{ fontSize: '1.45rem', fontWeight: 500 }}>But I can promise that if you're important to me, I won't casually walk away when things get difficult.</span>"
         </p>
 
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.75rem 1.75rem', borderRadius: 'var(--radius-full)', background: 'rgba(231, 184, 193, 0.1)', border: '1px solid var(--border-glass)', marginTop: '1rem' }}>
-          <span className="handwritten-note" style={{ fontSize: '1.35rem', color: 'var(--accent-cream)' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.75rem 1.75rem', borderRadius: 'var(--radius-full)', background: 'rgba(253, 236, 239, 0.7)', border: '1px solid var(--border-glass)', marginTop: '1rem' }}>
+          <span className="handwritten-note" style={{ fontSize: '1.4rem', color: 'var(--accent-rose)' }}>
             "I want to be someone you feel safe calling."
           </span>
         </div>

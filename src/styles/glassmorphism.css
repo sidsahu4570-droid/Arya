@@ -1,8 +1,8 @@
-/* Soft Translucent Romantic Surfaces & Link Buttons */
+/* Soft Light Surfaces & Handwritten Links */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   padding: 2.5rem;
@@ -14,19 +14,19 @@
 .glass-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-glass-hover);
-  box-shadow: var(--shadow-glow), var(--shadow-romantic);
+  box-shadow: var(--shadow-paper), var(--shadow-romantic);
 }
 
-/* Handwritten Link Buttons (Replacing rigid UI buttons) */
+/* Handwritten Romantic Links (replacing UI buttons) */
 .btn-romantic-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: transparent;
   border: none;
-  color: var(--accent-blush);
+  color: var(--accent-rose);
   font-family: var(--font-handwriting);
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 0.4rem 0.8rem;
   position: relative;
@@ -47,7 +47,7 @@
 }
 
 .btn-romantic-link:hover {
-  color: var(--accent-cream);
+  color: var(--text-deep);
   transform: translateY(-2px);
 }
 
@@ -55,15 +55,15 @@
   opacity: 1;
 }
 
-/* Soft Paper Surface for Final Letter */
+/* Paper Sheet Surface for Final Letter & Notes */
 .paper-letter-surface {
-  background: linear-gradient(145deg, #f8ede5 0%, #f0ded3 100%);
-  color: #26111a;
+  background: #fffdfc;
+  color: var(--text-deep);
   border-radius: var(--radius-md);
   padding: 3.5rem 3rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(227, 184, 193, 0.2);
+  box-shadow: 0 20px 50px rgba(74, 39, 48, 0.08), 0 5px 15px rgba(217, 107, 131, 0.06);
   position: relative;
-  border: 1px solid rgba(248, 237, 229, 0.4);
+  border: 1px solid rgba(217, 107, 131, 0.2);
 }
 
 @media (max-width: 640px) {

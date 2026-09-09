@@ -26,49 +26,49 @@ export default function StarfieldCanvas() {
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Generate Floating Candlelight Stardust Particles
-    const numParticles = Math.floor((width * height) / 7000);
+    // Floating Stardust Particles (Light Rose Tints)
+    const numParticles = Math.floor((width * height) / 8000);
     const particles = Array.from({ length: numParticles }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 2 + 0.8,
-      alpha: Math.random() * 0.5 + 0.2,
-      pulseSpeed: Math.random() * 0.015 + 0.005,
+      size: Math.random() * 2 + 1,
+      alpha: Math.random() * 0.4 + 0.15,
+      pulseSpeed: Math.random() * 0.01 + 0.003,
       layer: Math.random() * 2 + 1,
-      color: Math.random() > 0.4 ? '#f8ede5' : Math.random() > 0.5 ? '#e7b8c1' : '#c98291'
+      color: Math.random() > 0.5 ? '#d96b83' : '#e9a6b4'
     }));
 
-    // Soft Bokeh Orbs
-    const numBokeh = 12;
+    // Soft Sunlight / Blush Bokeh Orbs
+    const numBokeh = 8;
     const bokehOrbs = Array.from({ length: numBokeh }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 90 + 40,
-      alpha: Math.random() * 0.08 + 0.03,
-      speedX: (Math.random() - 0.5) * 0.3,
-      speedY: (Math.random() - 0.5) * 0.3,
-      color: Math.random() > 0.5 ? 'rgba(231, 184, 193, ' : 'rgba(125, 38, 59, '
+      radius: Math.random() * 100 + 60,
+      alpha: Math.random() * 0.12 + 0.04,
+      speedX: (Math.random() - 0.5) * 0.2,
+      speedY: (Math.random() - 0.5) * 0.2,
+      color: Math.random() > 0.5 ? 'rgba(246, 214, 221, ' : 'rgba(253, 236, 239, '
     }));
 
-    // Rose Petal Silhouettes
-    const numPetals = 8;
+    // Falling Soft Rose Petals
+    const numPetals = 9;
     const petals = Array.from({ length: numPetals }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       size: Math.random() * 12 + 8,
       rotation: Math.random() * Math.PI * 2,
-      rotationSpeed: (Math.random() - 0.5) * 0.01,
-      speedY: Math.random() * 0.4 + 0.2,
-      speedX: Math.sin(Math.random() * Math.PI) * 0.3,
+      rotationSpeed: (Math.random() - 0.5) * 0.008,
+      speedY: Math.random() * 0.35 + 0.15,
+      speedX: Math.sin(Math.random() * Math.PI) * 0.2,
       opacity: Math.random() * 0.35 + 0.15
     }));
 
     const render = () => {
-      mouse.x += (mouse.targetX - mouse.x) * 0.03;
-      mouse.y += (mouse.targetY - mouse.y) * 0.03;
+      mouse.x += (mouse.targetX - mouse.x) * 0.025;
+      mouse.y += (mouse.targetY - mouse.y) * 0.025;
 
-      const offsetX = (mouse.x - width / 2) * 0.015;
-      const offsetY = (mouse.y - height / 2) * 0.015;
+      const offsetX = (mouse.x - width / 2) * 0.01;
+      const offsetY = (mouse.y - height / 2) * 0.01;
 
       ctx.clearRect(0, 0, width, height);
 
@@ -98,7 +98,7 @@ export default function StarfieldCanvas() {
       // Render Floating Dust Particles
       particles.forEach((p) => {
         p.alpha += p.pulseSpeed;
-        if (p.alpha > 0.7 || p.alpha < 0.15) {
+        if (p.alpha > 0.6 || p.alpha < 0.1) {
           p.pulseSpeed = -p.pulseSpeed;
         }
 
@@ -106,7 +106,7 @@ export default function StarfieldCanvas() {
         const py = p.y + offsetY * p.layer;
 
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = Math.max(0.1, Math.min(0.8, p.alpha));
+        ctx.globalAlpha = Math.max(0.1, Math.min(0.6, p.alpha));
         ctx.beginPath();
         ctx.arc(px, py, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -116,7 +116,7 @@ export default function StarfieldCanvas() {
       // Render Falling Rose Petals
       petals.forEach((petal) => {
         petal.y += petal.speedY;
-        petal.x += Math.sin(petal.y * 0.01) * 0.5;
+        petal.x += Math.sin(petal.y * 0.01) * 0.4;
         petal.rotation += petal.rotationSpeed;
 
         if (petal.y > height + 20) {
@@ -127,9 +127,9 @@ export default function StarfieldCanvas() {
         ctx.save();
         ctx.translate(petal.x + offsetX, petal.y + offsetY);
         ctx.rotate(petal.rotation);
-        ctx.fillStyle = `rgba(201, 130, 145, ${petal.opacity})`;
+        ctx.fillStyle = `rgba(217, 107, 131, ${petal.opacity})`;
 
-        // Simple organic petal path
+        // Organic rose petal silhouette
         ctx.beginPath();
         ctx.moveTo(0, 0);
         ctx.bezierCurveTo(-petal.size / 2, -petal.size, -petal.size, petal.size / 2, 0, petal.size);
@@ -161,7 +161,7 @@ export default function StarfieldCanvas() {
         height: '100vh',
         pointerEvents: 'none',
         zIndex: 0,
-        opacity: 0.9
+        opacity: 0.95
       }}
     />
   );
