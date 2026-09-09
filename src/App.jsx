@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import React from 'react';
 import StarfieldCanvas from './components/StarfieldCanvas';
 import AudioPlayerToggle from './components/AudioPlayerToggle';
 import ScrollProgress from './components/ScrollProgress';
-import HeadphonesIntroModal from './components/HeadphonesIntroModal';
 
 // Import CSS
 import './styles/global.css';
@@ -30,31 +28,16 @@ import FinalLetterSection from './sections/FinalLetterSection';
 import ClosingMomentSection from './sections/ClosingMomentSection';
 
 export default function App() {
-  const [showIntroModal, setShowIntroModal] = useState(true);
-  const [autoStartAudio, setAutoStartAudio] = useState(false);
-
-  const handleEnterExperience = () => {
-    setShowIntroModal(false);
-    setAutoStartAudio(true);
-  };
-
   return (
     <main style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
-      {/* Headphones Intro Modal */}
-      <AnimatePresence>
-        {showIntroModal && (
-          <HeadphonesIntroModal onEnter={handleEnterExperience} />
-        )}
-      </AnimatePresence>
-
-      {/* Background Starfield Canvas */}
+      {/* Background Romantic Sunlight Canvas */}
       <StarfieldCanvas />
 
       {/* Top Scroll Indicator */}
       <ScrollProgress />
 
       {/* Top-Right Audio Player Controls */}
-      <AudioPlayerToggle autoStart={autoStartAudio} />
+      <AudioPlayerToggle />
 
       {/* Main Experience Flow (17 Sections) */}
       <HeroSection />
@@ -82,12 +65,12 @@ export default function App() {
           padding: '2.5rem 1rem',
           color: 'var(--text-muted)',
           fontSize: '0.85rem',
-          borderTop: '1px solid rgba(230, 200, 148, 0.08)',
+          borderTop: '1px solid rgba(217, 107, 131, 0.15)',
           position: 'relative',
           zIndex: 2
         }}
       >
-        <p className="font-serif" style={{ fontSize: '1rem', color: 'var(--accent-gold-light)' }}>
+        <p className="font-serif" style={{ fontSize: '1rem', color: 'var(--accent-rose)' }}>
           Made with care by Siddharth for Arya • {new Date().getFullYear()}
         </p>
       </footer>
