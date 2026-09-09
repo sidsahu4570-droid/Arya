@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import StarfieldCanvas from './components/StarfieldCanvas';
 import AudioPlayerToggle from './components/AudioPlayerToggle';
 import ScrollProgress from './components/ScrollProgress';
+import HeadphonesIntroModal from './components/HeadphonesIntroModal';
 
 // Import CSS
 import './styles/global.css';
@@ -28,16 +30,31 @@ import FinalLetterSection from './sections/FinalLetterSection';
 import ClosingMomentSection from './sections/ClosingMomentSection';
 
 export default function App() {
+  const [showIntroModal, setShowIntroModal] = useState(true);
+  const [autoStartAudio, setAutoStartAudio] = useState(false);
+
+  const handleEnterExperience = () => {
+    setShowIntroModal(false);
+    setAutoStartAudio(true);
+  };
+
   return (
     <main style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
+      {/* Headphones Intro Modal */}
+      <AnimatePresence>
+        {showIntroModal && (
+          <HeadphonesIntroModal onEnter={handleEnterExperience} />
+        )}
+      </AnimatePresence>
+
       {/* Background Starfield Canvas */}
       <StarfieldCanvas />
 
       {/* Top Scroll Indicator */}
       <ScrollProgress />
 
-      {/* Floating Audio Player Toggle */}
-      <AudioPlayerToggle />
+      {/* Top-Right Audio Player Controls */}
+      <AudioPlayerToggle autoStart={autoStartAudio} />
 
       {/* Main Experience Flow (17 Sections) */}
       <HeroSection />
