@@ -37,9 +37,9 @@ export default function HeroSection() {
       />
 
       <motion.div
-        initial={false}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
         style={{ marginBottom: '0.75rem' }}
       >
         <span className="handwritten-note" style={{ fontSize: '1.75rem', color: 'var(--accent-rose)' }}>
@@ -48,9 +48,9 @@ export default function HeroSection() {
       </motion.div>
 
       <motion.div
-        initial={false}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.1 }}
+        transition={{ duration: 0.4, delay: 0.05, ease: 'easeOut' }}
         style={{ position: 'relative', display: 'inline-block', marginBottom: '1.25rem' }}
       >
         <h1
@@ -86,9 +86,9 @@ export default function HeroSection() {
       </motion.div>
 
       <motion.p
-        initial={false}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
         className="font-serif text-subtitle"
         style={{
           fontSize: 'clamp(1.3rem, 3vw, 1.9rem)',
@@ -104,9 +104,9 @@ export default function HeroSection() {
       </motion.p>
 
       <motion.p
-        initial={false}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        transition={{ duration: 0.4, delay: 0.15, ease: 'easeOut' }}
         style={{
           maxWidth: '540px',
           color: 'var(--text-body)',
@@ -121,9 +121,9 @@ export default function HeroSection() {
       </motion.p>
 
       <motion.div
-        initial={false}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        transition={{ duration: 0.4, delay: 0.2, ease: 'easeOut' }}
       >
         <button onClick={scrollToNext} className="btn-romantic-link" style={{ fontSize: '1.5rem' }}>
           <span>read my little story ↓</span>
