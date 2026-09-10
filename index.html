@@ -13,6 +13,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
+    <!-- Critical Inlined CSS for Instant First Paint (<0.1s) -->
+    <style>
+      :root {
+        --bg-primary: #fff7f5;
+        --text-deep: #4a2730;
+        --text-heading: #6e3543;
+        --text-body: #765b62;
+        --accent-rose: #d96b83;
+        --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+        --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        --font-handwriting: 'Caveat', cursive;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #fff7f5 0%, #fdecef 40%, #fff1f3 70%, #fff7f5 100%);
+        font-family: var(--font-sans);
+        color: var(--text-body);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      .handwritten-note {
+        font-family: var(--font-handwriting);
+        color: var(--accent-rose);
+        font-style: italic;
+      }
+      .font-serif {
+        font-family: var(--font-serif);
+      }
+      .btn-romantic-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: transparent;
+        border: none;
+        color: var(--accent-rose);
+        font-family: var(--font-handwriting);
+        font-size: 1.55rem;
+        cursor: pointer;
+        padding: 0.4rem 0.8rem;
+        position: relative;
+        text-decoration: none;
+      }
+    </style>
+
     <!-- Asynchronous Non-Blocking Font Loading for Used Fonts -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -20,7 +65,32 @@
     </noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main style="position:relative;min-height:100vh;overflow-x:hidden">
+        <section id="hero" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:2rem 1.5rem;z-index:2">
+          <div style="margin-bottom:0.75rem">
+            <span class="handwritten-note" style="font-size:1.75rem;color:#d96b83">for you.</span>
+          </div>
+          <div style="position:relative;display:inline-block;margin-bottom:1.25rem">
+            <h1 style="font-size:clamp(3.2rem, 14vw, 9.5rem);letter-spacing:0.08em;font-weight:400;line-height:1;color:#6e3543;margin:0;max-width:100%;font-family:'Cormorant Garamond', Georgia, serif">ARYA</h1>
+            <svg width="100%" height="18" viewBox="0 0 200 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:-10px;opacity:0.8">
+              <path d="M5 12C45 5 115 4 195 13" stroke="#d96b83" stroke-width="2.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="font-serif text-subtitle" style="font-size:clamp(1.3rem, 3vw, 1.9rem);max-width:650px;color:#4a2730;font-style:italic;margin-bottom:1.25rem;line-height:1.45">
+            "Maybe this is nothing yet.<br />Maybe someday it becomes everything."
+          </p>
+          <p style="max-width:540px;color:#765b62;font-size:clamp(1rem, 1.8vw, 1.15rem);font-weight:300;margin-bottom:3.5rem;line-height:1.65">
+            Some things aren't meant to be decided in one conversation.<br />They're meant to be discovered.
+          </p>
+          <div>
+            <a href="#how-this-started" class="btn-romantic-link" style="font-size:1.5rem">
+              <span>read my little story ↓</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
