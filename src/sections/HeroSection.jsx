@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   const scrollToNext = () => {
@@ -10,7 +11,6 @@ export default function HeroSection() {
 
   return (
     <section
-      id="hero"
       style={{
         minHeight: '100vh',
         display: 'flex',
@@ -36,13 +36,23 @@ export default function HeroSection() {
         }}
       />
 
-      <div style={{ marginBottom: '0.75rem' }} className="hero-animate-in">
+      <motion.div
+        initial={false}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        style={{ marginBottom: '0.75rem' }}
+      >
         <span className="handwritten-note" style={{ fontSize: '1.75rem', color: 'var(--accent-rose)' }}>
           for you.
         </span>
-      </div>
+      </motion.div>
 
-      <div style={{ position: 'relative', display: 'inline-block', marginBottom: '1.25rem' }} className="hero-animate-in">
+      <motion.div
+        initial={false}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        style={{ position: 'relative', display: 'inline-block', marginBottom: '1.25rem' }}
+      >
         <h1
           style={{
             fontSize: 'clamp(3.2rem, 14vw, 9.5rem)',
@@ -73,10 +83,13 @@ export default function HeroSection() {
             strokeLinecap="round"
           />
         </svg>
-      </div>
+      </motion.div>
 
-      <p
-        className="font-serif text-subtitle hero-animate-in"
+      <motion.p
+        initial={false}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="font-serif text-subtitle"
         style={{
           fontSize: 'clamp(1.3rem, 3vw, 1.9rem)',
           maxWidth: '650px',
@@ -88,10 +101,12 @@ export default function HeroSection() {
       >
         "Maybe this is nothing yet.<br />
         Maybe someday it becomes everything."
-      </p>
+      </motion.p>
 
-      <p
-        className="hero-animate-in"
+      <motion.p
+        initial={false}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
         style={{
           maxWidth: '540px',
           color: 'var(--text-body)',
@@ -103,13 +118,17 @@ export default function HeroSection() {
       >
         Some things aren't meant to be decided in one conversation.<br />
         They're meant to be discovered.
-      </p>
+      </motion.p>
 
-      <div className="hero-animate-in">
+      <motion.div
+        initial={false}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         <button onClick={scrollToNext} className="btn-romantic-link" style={{ fontSize: '1.5rem' }}>
           <span>read my little story ↓</span>
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }
