@@ -18,7 +18,7 @@ export default function YourFreedomSection() {
         subtitle="Affection without possessiveness."
       />
 
-      <div className="glass-card mb-12 text-center" style={{ maxWidth: '800px', margin: '0 auto 3rem', background: '#fffdfc' }}>
+      <div style={{ maxWidth: '780px', margin: '0 auto 3.5rem', textAlign: 'center' }}>
         <p className="font-serif text-subtitle" style={{ fontSize: '1.35rem', color: 'var(--text-deep)', marginBottom: '1.5rem', lineHeight: '1.85' }}>
           "You once told me you don't like answering anyone about where you are, when you're going, or who you're with.<br /><br />
           <span className="text-gradient-rose" style={{ fontWeight: 500 }}>I understand that.</span><br /><br />
@@ -31,8 +31,8 @@ export default function YourFreedomSection() {
         </p>
       </div>
 
-      {/* Floating Shift Compositions */}
-      <div style={{ maxWidth: '680px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+      {/* Floating Shift Notes (No boxes!) */}
+      <div style={{ maxWidth: '640px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {shifts.map((item, idx) => (
           <motion.div
             key={idx}
@@ -41,11 +41,8 @@ export default function YourFreedomSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.12 }}
             style={{
-              padding: '1.25rem 1.75rem',
-              borderRadius: 'var(--radius-md)',
-              background: '#fffdfc',
-              border: '1px solid rgba(217, 107, 131, 0.2)',
-              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)',
+              paddingBottom: '0.8rem',
+              borderBottom: '1px stroke rgba(217, 107, 131, 0.15)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -60,7 +57,7 @@ export default function YourFreedomSection() {
               <ArrowRight size={18} />
             </div>
 
-            <div style={{ flex: 1, textAlign: 'right', fontWeight: 500, color: 'var(--text-deep)', fontSize: '1.2rem', fontFamily: 'var(--font-serif)' }}>
+            <div style={{ flex: 1, textAlign: 'right', fontWeight: 500, color: 'var(--text-deep)', fontSize: '1.25rem', fontFamily: 'var(--font-serif)' }}>
               {item.to}
             </div>
           </motion.div>

@@ -36,7 +36,7 @@ export default function ThingsINoticeSection() {
         subtitle="The little quirks, habits, and details that make you who you are."
       />
 
-      <div style={{ maxWidth: '750px', margin: '0 auto 3rem', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+      <div style={{ maxWidth: '720px', margin: '0 auto 4rem', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
         {observations.map((item, idx) => (
           <motion.div
             key={idx}
@@ -45,35 +45,35 @@ export default function ThingsINoticeSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.08 }}
             style={{
-              padding: '1.75rem',
-              borderRadius: 'var(--radius-md)',
-              background: '#fffdfc',
-              border: '1px solid rgba(217, 107, 131, 0.2)',
-              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
+              paddingBottom: '1rem',
+              borderBottom: '1px stroke rgba(217, 107, 131, 0.15)'
             }}
           >
-            <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.5rem', marginBottom: '0.4rem', fontWeight: 400 }}>
-              {item.title}
-            </h3>
-            <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.75 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.3rem' }}>
+              <span style={{ color: 'var(--accent-rose)', fontSize: '1rem' }}>♡</span>
+              <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.5rem', margin: 0, fontWeight: 400 }}>
+                {item.title}
+              </h3>
+            </div>
+            <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.75, paddingLeft: '1.2rem' }}>
               {item.text}
             </p>
           </motion.div>
         ))}
       </div>
 
-      {/* Interactive Emoji Story Note */}
+      {/* Interactive Emoji Story Note (No card box!) */}
       <div
-        className="glass-card text-center"
+        className="scrapbook-note text-center"
         style={{
-          maxWidth: '750px',
+          maxWidth: '680px',
           margin: '0 auto',
           background: '#fffdfc',
-          borderColor: 'rgba(217, 107, 131, 0.3)'
+          transform: 'rotate(0.6deg)'
         }}
       >
         <span className="handwritten-note mb-2" style={{ fontSize: '1.5rem', color: 'var(--accent-rose)' }}>
-          The Infamous Emoji Incident
+          ♡ The Infamous Emoji Incident
         </span>
 
         <p className="font-serif" style={{ fontSize: '1.35rem', color: 'var(--text-deep)', margin: '1rem 0' }}>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader';
-import { Camera, Video, Unlock } from 'lucide-react';
 
 export default function HowItStartedSection() {
   const diaryEntries = [
@@ -66,93 +65,67 @@ export default function HowItStartedSection() {
         </p>
       </div>
 
-      {/* SPECIAL MEMORY CARD: "And then there was Instagram..." */}
+      {/* SPECIAL HANDWRITTEN MEMORY NOTE: "And then there was Instagram..." */}
       <div
-        className="glass-card mb-20"
+        className="scrapbook-note mb-20"
         style={{
-          background: '#fffdfc',
-          borderColor: 'rgba(217, 107, 131, 0.25)',
-          maxWidth: '750px',
+          maxWidth: '680px',
           margin: '0 auto 5rem',
-          boxShadow: '0 15px 40px rgba(100, 40, 55, 0.08)'
+          transform: 'rotate(-0.8deg)',
+          background: '#fffdfc'
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
           <span className="handwritten-note" style={{ fontSize: '1.5rem', color: 'var(--accent-rose)' }}>
-            That One Google Meet Call...
+            ♡ That one Google Meet...
           </span>
           <h3 className="font-serif text-gradient-rose" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginTop: '0.3rem' }}>
             "And then there was Instagram..."
           </h3>
         </div>
 
-        {/* Dialogue Memory Flow */}
+        {/* Handwritten Memory Sequence */}
         <div
           style={{
-            maxWidth: '540px',
-            margin: '0 auto 2rem',
-            background: 'rgba(253, 236, 239, 0.65)',
-            borderRadius: 'var(--radius-md)',
-            border: '1px solid rgba(217, 107, 131, 0.2)',
-            padding: '1.5rem',
+            maxWidth: '520px',
+            margin: '0 auto 1.5rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '1rem'
+            gap: '0.8rem',
+            textAlign: 'center'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--accent-rose)', fontSize: '0.9rem' }}>
-            <Video size={16} />
-            <span>Google Meet • CRM Explanation Call</span>
-          </div>
-
-          <div style={{ alignSelf: 'flex-start', maxWidth: '82%' }}>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px' }}>Siddharth</div>
-            <div style={{ background: '#fffdfc', border: '1px solid rgba(217, 107, 131, 0.25)', padding: '0.7rem 1rem', borderRadius: '14px 14px 14px 4px', color: 'var(--text-deep)', fontSize: '0.95rem' }}>
-              "Waise... Instagram ID?"
-            </div>
-          </div>
-
-          <div style={{ alignSelf: 'flex-end', maxWidth: '82%' }}>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px', textAlign: 'right' }}>Arya</div>
-            <div style={{ background: 'rgba(246, 214, 221, 0.7)', border: '1px solid rgba(217, 107, 131, 0.3)', padding: '0.7rem 1rem', borderRadius: '14px 14px 4px 14px', color: 'var(--text-deep)', fontSize: '0.95rem' }}>
-              "Nope. 😌"
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center', margin: '0.4rem 0', color: 'var(--text-muted)', fontSize: '0.82rem', fontStyle: 'italic' }}>
-            —— I didn't push you then. A few days passed... ——
-          </div>
-
-          <div style={{ alignSelf: 'flex-start', maxWidth: '82%' }}>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px' }}>Siddharth (A few days later)</div>
-            <div style={{ background: '#fffdfc', border: '1px solid rgba(217, 107, 131, 0.25)', padding: '0.7rem 1rem', borderRadius: '14px 14px 14px 4px', color: 'var(--text-deep)', fontSize: '0.95rem' }}>
-              "Ab Instagram ID mil sakti hai?"
-            </div>
-          </div>
-
-          <div style={{ alignSelf: 'flex-end', maxWidth: '82%' }}>
-            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '2px', textAlign: 'right' }}>Arya</div>
-            <div style={{ background: 'rgba(217, 107, 131, 0.2)', border: '1px solid rgba(217, 107, 131, 0.4)', padding: '0.7rem 1rem', borderRadius: '14px 14px 4px 14px', color: 'var(--text-deep)', fontSize: '0.95rem', fontWeight: 500 }}>
-              "Okay... here you go."
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center', padding: '0.6rem', background: '#fffdfc', borderRadius: 'var(--radius-sm)', border: '1px solid var(--accent-rose)', color: 'var(--accent-rose)', fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-            <Unlock size={15} />
-            <span>Instagram Unlocked. 😂</span>
-          </div>
-        </div>
-
-        {/* Text Reflection */}
-        <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <p className="font-serif text-subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-deep)', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-            "I asked once. You said no.<br />
-            I didn't push you then.<br />
-            A few days later, I asked again...<br />
-            <span className="text-gradient-rose font-serif" style={{ fontSize: '1.35rem' }}>and this time, you shared it with me.</span>"
+          <p className="handwritten-note" style={{ fontSize: '1.3rem', color: 'var(--text-deep)', margin: 0 }}>
+            "Google Meet • CRM explanation call"
+          </p>
+          <p style={{ color: 'var(--text-body)', fontSize: '1.05rem', margin: 0 }}>
+            I asked for your Instagram ID.
           </p>
 
-          <p style={{ color: 'var(--text-body)', fontSize: '1rem', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+          <p className="handwritten-note" style={{ fontSize: '1.35rem', color: 'var(--accent-rose)', margin: '0.2rem 0' }}>
+            You said no. 😌
+          </p>
+
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', fontStyle: 'italic', margin: 0 }}>
+            (okay... I didn't push you then)
+          </p>
+
+          <p className="handwritten-note" style={{ fontSize: '1.3rem', color: 'var(--text-deep)', margin: '0.4rem 0 0' }}>
+            A few days later... I asked again.
+          </p>
+
+          <p className="font-serif text-gradient-rose" style={{ fontSize: '1.3rem', fontWeight: 500, margin: 0 }}>
+            And this time, Instagram unlocked. 😂
+          </p>
+        </div>
+
+        {/* Narrative Reflection */}
+        <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center', borderTop: '1px dashed rgba(217, 107, 131, 0.2)', paddingTop: '1.25rem' }}>
+          <p className="font-serif" style={{ fontSize: '1.2rem', color: 'var(--text-deep)', lineHeight: 1.8, marginBottom: '1rem' }}>
+            "I asked once. You said no. I didn't push you then. A few days later, I asked again... and this time, you shared it with me."
+          </p>
+
+          <p style={{ color: 'var(--text-body)', fontSize: '0.98rem', lineHeight: 1.7, marginBottom: '1rem' }}>
             Maybe it was just Instagram. But somehow, that tiny little thing still made me smile.
           </p>
 
@@ -162,7 +135,7 @@ export default function HowItStartedSection() {
         </div>
       </div>
 
-      {/* Diary Chapters Flow */}
+      {/* Flowing Diary Chapters (No cards, no boxes!) */}
       <div style={{ maxWidth: '720px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
         {diaryEntries.map((entry, idx) => (
           <motion.div

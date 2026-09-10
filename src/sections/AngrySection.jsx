@@ -13,27 +13,27 @@ export default function AngrySection() {
         subtitle="What happens when I inevitably mess up."
       />
 
-      <div className="glass-card text-center" style={{ maxWidth: '750px', margin: '0 auto', background: '#fffdfc' }}>
-        <span className="handwritten-note mb-2" style={{ fontSize: '1.45rem', color: 'var(--accent-rose)' }}>
-          "don't judge me 😂"
+      <div style={{ maxWidth: '750px', margin: '0 auto', textAlign: 'center' }}>
+        <span className="handwritten-note mb-2" style={{ fontSize: '1.5rem', color: 'var(--accent-rose)' }}>
+          ♡ "don't judge me 😂"
         </span>
 
-        <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.7rem', margin: '0.75rem 0 1.25rem', fontWeight: 400 }}>
+        <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.75rem', margin: '0.75rem 0 1.25rem', fontWeight: 400 }}>
           "If I ever become stupid enough to make the same mistake twice..."
         </h3>
 
-        <p style={{ color: 'var(--text-body)', fontSize: '1.08rem', lineHeight: 1.85, marginBottom: '1.75rem' }}>
+        <p style={{ color: 'var(--text-body)', fontSize: '1.08rem', lineHeight: 1.85, marginBottom: '2rem' }}>
           You'll probably get angry.<br />
           Maybe you'll lecture me. Maybe you'll give me <em>that look</em>. Maybe you'll ignore me for a while.
         </p>
 
         <div
           style={{
-            background: 'rgba(253, 236, 239, 0.7)',
-            border: '1px solid rgba(217, 107, 131, 0.3)',
-            borderRadius: 'var(--radius-md)',
             padding: '1.5rem',
-            margin: '1.5rem 0'
+            borderLeft: '3px solid var(--accent-rose)',
+            background: 'rgba(253, 236, 239, 0.5)',
+            margin: '1.5rem 0',
+            textAlign: 'center'
           }}
         >
           <p className="font-serif text-gradient-rose" style={{ fontSize: '1.4rem', margin: 0, fontWeight: 500 }}>
@@ -42,11 +42,11 @@ export default function AngrySection() {
           </p>
         </div>
 
-        <div style={{ marginTop: '2rem' }}>
+        <div style={{ marginTop: '2.5rem' }}>
           <button
             onClick={() => setDealAccepted(!dealAccepted)}
             className="btn-romantic-link"
-            style={{ fontSize: '1.4rem' }}
+            style={{ fontSize: '1.45rem' }}
           >
             {dealAccepted ? (
               <span>Deal Accepted: No Violence! 🤝</span>

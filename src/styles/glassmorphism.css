@@ -1,21 +1,4 @@
-/* Soft Light Surfaces & Handwritten Links */
-.glass-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-md);
-  padding: 2.5rem;
-  box-shadow: var(--shadow-romantic);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-
-.glass-card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-glass-hover);
-  box-shadow: var(--shadow-paper), var(--shadow-romantic);
-}
+/* Soft Translucent Romantic Elements & Link Buttons (No Box Cards) */
 
 /* Handwritten Romantic Links (replacing UI buttons) */
 .btn-romantic-link {
@@ -26,7 +9,7 @@
   border: none;
   color: var(--accent-rose);
   font-family: var(--font-handwriting);
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   cursor: pointer;
   padding: 0.4rem 0.8rem;
   position: relative;
@@ -55,23 +38,34 @@
   opacity: 1;
 }
 
-/* Paper Sheet Surface for Final Letter & Notes */
+/* Paper Sheet Surface for Final Letter */
 .paper-letter-surface {
-  background: #fffdfc;
+  background: var(--bg-cream);
   color: var(--text-deep);
-  border-radius: var(--radius-md);
+  border-radius: 4px;
   padding: 3.5rem 3rem;
-  box-shadow: 0 20px 50px rgba(74, 39, 48, 0.08), 0 5px 15px rgba(217, 107, 131, 0.06);
+  box-shadow: 0 15px 45px rgba(74, 39, 48, 0.07), 0 3px 10px rgba(217, 107, 131, 0.05);
   position: relative;
-  border: 1px solid rgba(217, 107, 131, 0.2);
+  border: 1px solid rgba(217, 107, 131, 0.15);
+}
+
+/* Scrapbook Paper Scrap (Soft irregular paper note) */
+.scrapbook-note {
+  background: var(--bg-cream);
+  padding: 1.5rem 1.75rem;
+  border-radius: 6px;
+  box-shadow: 0 8px 25px rgba(100, 40, 55, 0.05);
+  border: 1px dashed rgba(217, 107, 131, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scrapbook-note:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(100, 40, 55, 0.08);
 }
 
 @media (max-width: 640px) {
   .paper-letter-surface {
     padding: 2.25rem 1.5rem;
-  }
-  
-  .glass-card {
-    padding: 1.75rem 1.25rem;
   }
 }

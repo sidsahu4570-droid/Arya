@@ -34,15 +34,15 @@ export default function VibesMatterSection() {
 
         <p className="font-serif text-subtitle" style={{ fontSize: '1.4rem', color: 'var(--text-deep)', marginBottom: '1.5rem' }}>
           "You told me age doesn't matter.<br />
-          <span className="text-gradient-rose font-serif" style={{ fontSize: '2.2rem', fontWeight: 500 }}>Vibes do.</span>"
+          <span className="text-gradient-rose font-serif" style={{ fontSize: '2.4rem', fontWeight: 400 }}>Vibes do.</span>"
         </p>
 
-        <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-body)', fontSize: '1.05rem' }}>
+        <p style={{ maxWidth: '600px', margin: '0 auto', color: 'var(--text-body)', fontSize: '1.08rem' }}>
           And I've been thinking about that ever since...
         </p>
       </div>
 
-      {/* Cinematic Question Paper Box */}
+      {/* Cinematic Question (No box/card!) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -50,12 +50,9 @@ export default function VibesMatterSection() {
         transition={{ duration: 0.8 }}
         style={{
           textAlign: 'center',
-          padding: '3.5rem 1.5rem',
-          margin: '2rem 0 4rem',
-          borderRadius: 'var(--radius-lg)',
-          background: '#fffdfc',
-          border: '1px solid rgba(217, 107, 131, 0.25)',
-          boxShadow: '0 20px 50px rgba(74, 39, 48, 0.08)'
+          padding: '3rem 1rem',
+          margin: '2rem auto 4rem',
+          maxWidth: '700px'
         }}
       >
         <h3 className="font-serif text-gradient-rose" style={{ fontSize: 'clamp(2.4rem, 6vw, 4rem)', marginBottom: '1rem', fontWeight: 400 }}>
@@ -67,14 +64,14 @@ export default function VibesMatterSection() {
         </p>
       </motion.div>
 
-      {/* Floating Stationery Notes */}
-      <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-        <span className="handwritten-note" style={{ fontSize: '1.65rem', color: 'var(--accent-rose)' }}>
-          things I hope we'll discover together...
+      {/* Scattered Organic Love Notes (NO CARD GRID!) */}
+      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <span className="handwritten-note" style={{ fontSize: '1.75rem', color: 'var(--accent-rose)' }}>
+          ♡ things I hope we'll discover together...
         </span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
         {vibeDiscoveries.map((vibe, idx) => (
           <motion.div
             key={idx}
@@ -83,18 +80,19 @@ export default function VibesMatterSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.04 }}
             style={{
-              padding: '1.6rem',
-              borderRadius: 'var(--radius-md)',
-              background: '#fffdfc',
-              border: '1px solid rgba(217, 107, 131, 0.2)',
-              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)',
-              transform: `rotate(${vibe.rotate})`
+              padding: '1.25rem 0',
+              transform: `rotate(${vibe.rotate})`,
+              borderBottom: '1px stroke rgba(217, 107, 131, 0.15)'
             }}
           >
-            <h4 className="font-serif text-gradient-rose" style={{ fontSize: '1.45rem', marginBottom: '0.3rem', fontWeight: 500 }}>
-              {vibe.title}
-            </h4>
-            <p className="handwritten-note" style={{ fontSize: '1.25rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.5 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.2rem' }}>
+              <span style={{ color: 'var(--accent-rose)', fontSize: '1.1rem' }}>♡</span>
+              <h4 className="font-serif text-gradient-rose" style={{ fontSize: '1.45rem', margin: 0, fontWeight: 400 }}>
+                {vibe.title}
+              </h4>
+            </div>
+
+            <p className="handwritten-note" style={{ fontSize: '1.3rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.5, paddingLeft: '1.2rem' }}>
               "{vibe.note}"
             </p>
           </motion.div>

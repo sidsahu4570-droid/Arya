@@ -39,7 +39,7 @@ export default function FutureChaptersSection() {
         subtitle="Chapter by chapter, without rushing."
       />
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem', maxWidth: '750px', margin: '0 auto' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '720px', margin: '0 auto' }}>
         {chapters.map((chap, idx) => {
           const Icon = chap.icon;
           return (
@@ -50,16 +50,13 @@ export default function FutureChaptersSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.12 }}
               style={{
-                padding: '2rem',
-                borderRadius: 'var(--radius-md)',
-                background: '#fffdfc',
-                border: chap.unlocked ? '1px solid rgba(217, 107, 131, 0.25)' : '1px solid rgba(217, 107, 131, 0.12)',
-                boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
+                paddingLeft: '1.5rem',
+                borderLeft: chap.unlocked ? '2px solid var(--accent-rose)' : '2px solid rgba(217, 107, 131, 0.2)'
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                <span className="handwritten-note" style={{ fontSize: '1.4rem', color: chap.unlocked ? 'var(--accent-rose)' : 'var(--text-muted)' }}>
-                  {chap.badge}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                <span className="handwritten-note" style={{ fontSize: '1.45rem', color: chap.unlocked ? 'var(--accent-rose)' : 'var(--text-muted)' }}>
+                  ♡ {chap.badge}
                 </span>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: chap.unlocked ? 'var(--accent-rose)' : 'var(--text-muted)', fontSize: '0.85rem' }}>
@@ -72,7 +69,7 @@ export default function FutureChaptersSection() {
                 {chap.title}
               </h3>
 
-              <p style={{ fontSize: '0.98rem', color: chap.unlocked ? 'var(--text-body)' : 'var(--text-muted)', margin: 0, lineHeight: 1.65 }}>
+              <p style={{ fontSize: '1.02rem', color: chap.unlocked ? 'var(--text-body)' : 'var(--text-muted)', margin: 0, lineHeight: 1.65 }}>
                 {chap.desc}
               </p>
             </motion.div>

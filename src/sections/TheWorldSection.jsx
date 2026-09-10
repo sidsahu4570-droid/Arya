@@ -5,7 +5,7 @@ import SectionHeader from '../components/SectionHeader';
 export default function TheWorldSection() {
   const locations = [
     {
-      name: 'Monaco',
+      name: 'Monaco 🇲🇨',
       tag: 'The Supercar Capital',
       description: 'Especially Monaco. Because I already know exactly what would happen there: You\'d look at the cars. I\'d look at you looking at the cars. And yes, we\'d probably spend half the trip talking about which one we\'d take home. 😂'
     },
@@ -49,16 +49,18 @@ export default function TheWorldSection() {
         subtitle="The places waiting for us across the world."
       />
 
-      {/* Monaco Romantic Travel Spotlight */}
+      {/* Monaco Romantic Travel Spotlight Note */}
       <div
-        className="glass-card mb-12"
+        className="scrapbook-note mb-12"
         style={{
+          maxWidth: '720px',
+          margin: '0 auto 3.5rem',
           background: '#fffdfc',
-          borderColor: 'var(--accent-rose)'
+          transform: 'rotate(0.5deg)'
         }}
       >
-        <span className="handwritten-note mb-2" style={{ fontSize: '1.45rem', color: 'var(--accent-rose)' }}>
-          Special Spotlight: Monaco 🇲🇨
+        <span className="handwritten-note mb-2" style={{ fontSize: '1.5rem', color: 'var(--accent-rose)' }}>
+          ♡ Special Spotlight: Monaco
         </span>
         <h3 className="font-serif text-gradient-rose" style={{ fontSize: '2rem', marginBottom: '0.75rem', fontWeight: 400 }}>
           Monaco
@@ -70,28 +72,25 @@ export default function TheWorldSection() {
         </p>
       </div>
 
-      {/* Romantic Destination Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
+      {/* Flowing Handwritten Destinations (No card boxes!) */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '2rem' }}>
         {locations.map((loc, idx) => (
           <div
             key={idx}
             style={{
-              padding: '1.5rem',
-              borderRadius: 'var(--radius-md)',
-              background: '#fffdfc',
-              border: '1px solid rgba(217, 107, 131, 0.2)',
-              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
+              paddingBottom: '1rem',
+              borderBottom: '1px stroke rgba(217, 107, 131, 0.15)'
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem' }}>
-              <h4 className="font-serif text-gradient-rose" style={{ fontSize: '1.35rem', margin: 0, fontWeight: 500 }}>
+              <h4 className="font-serif text-gradient-rose" style={{ fontSize: '1.4rem', margin: 0, fontWeight: 400 }}>
                 {loc.name}
               </h4>
-              <span className="handwritten-note" style={{ fontSize: '1.15rem', color: 'var(--text-muted)' }}>
+              <span className="handwritten-note" style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>
                 {loc.tag}
               </span>
             </div>
-            <p style={{ fontSize: '0.96rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.65 }}>
+            <p style={{ fontSize: '0.98rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.65 }}>
               {loc.description}
             </p>
           </div>
