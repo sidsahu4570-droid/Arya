@@ -75,10 +75,30 @@ export default function FinalLetterSection() {
             And hoping that someday, when you think about the future, I'm somewhere in it.
           </p>
 
-          <div style={{ textAlign: 'right', marginTop: '3.5rem', borderTop: '1px solid rgba(217, 107, 131, 0.2)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '0.5rem' }}>
-            <span className="handwritten-note" style={{ fontSize: '2.3rem', color: 'var(--accent-rose)' }}>
-              — Siddharth 🌹
+          <div style={{ textAlign: 'right', marginTop: '3.5rem', borderTop: '1px solid rgba(217, 107, 131, 0.15)', paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+            <span className="handwritten-note" style={{ fontSize: '2.4rem', color: 'var(--accent-rose)', lineHeight: 1 }}>
+              — Siddharth
             </span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '0.25rem', paddingRight: '1.2rem' }}>
+              <span className="handwritten-note" style={{ fontSize: '1.3rem', color: 'var(--accent-rose)', lineHeight: 1 }}>
+                ♡
+              </span>
+              <svg
+                width="110"
+                height="10"
+                viewBox="0 0 110 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ opacity: 0.6, marginTop: '2px' }}
+              >
+                <path
+                  d="M3 6C28 2 75 3 107 7"
+                  stroke="var(--accent-rose)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </motion.div>
