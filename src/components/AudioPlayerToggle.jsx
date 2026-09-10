@@ -144,7 +144,7 @@ export default function AudioPlayerToggle({ autoStart = false }) {
 
   return (
     <>
-      <audio ref={audioRef} src="/audio/romantic-instrumental.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/audio/romantic-instrumental.mp3" loop preload="none" />
 
       {/* Floating Light Pill Control */}
       <div

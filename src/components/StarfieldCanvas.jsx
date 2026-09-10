@@ -26,8 +26,8 @@ export default function StarfieldCanvas() {
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Floating Stardust Particles (Light Rose Tints)
-    const numParticles = Math.floor((width * height) / 8000);
+    // Floating Stardust Particles (Light Rose Tints) - Optimized for 60fps performance
+    const numParticles = Math.min(35, Math.floor((width * height) / 25000));
     const particles = Array.from({ length: numParticles }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -39,19 +39,19 @@ export default function StarfieldCanvas() {
     }));
 
     // Soft Sunlight / Blush Bokeh Orbs
-    const numBokeh = 8;
+    const numBokeh = 5;
     const bokehOrbs = Array.from({ length: numBokeh }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 100 + 60,
-      alpha: Math.random() * 0.12 + 0.04,
+      radius: Math.random() * 90 + 50,
+      alpha: Math.random() * 0.1 + 0.03,
       speedX: (Math.random() - 0.5) * 0.2,
       speedY: (Math.random() - 0.5) * 0.2,
       color: Math.random() > 0.5 ? 'rgba(246, 214, 221, ' : 'rgba(253, 236, 239, '
     }));
 
     // Falling Soft Rose Petals
-    const numPetals = 9;
+    const numPetals = 6;
     const petals = Array.from({ length: numPetals }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
