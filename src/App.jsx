@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+import HeroSection from './sections/HeroSection';
 import StarfieldCanvas from './components/StarfieldCanvas';
 import AudioPlayerToggle from './components/AudioPlayerToggle';
 import ScrollProgress from './components/ScrollProgress';
@@ -8,24 +9,23 @@ import './styles/global.css';
 import './styles/typography.css';
 import './styles/glassmorphism.css';
 
-// Import All 17 Sections
-import HeroSection from './sections/HeroSection';
-import HowItStartedSection from './sections/HowItStartedSection';
-import VibesMatterSection from './sections/VibesMatterSection';
-import ThingsINoticeSection from './sections/ThingsINoticeSection';
-import YourFreedomSection from './sections/YourFreedomSection';
-import FoodAndCareSection from './sections/FoodAndCareSection';
-import LittleThingsSection from './sections/LittleThingsSection';
-import LifeIImagineSection from './sections/LifeIImagineSection';
-import TheWorldSection from './sections/TheWorldSection';
-import MyFamilySection from './sections/MyFamilySection';
-import AngrySection from './sections/AngrySection';
-import DrinkingSection from './sections/DrinkingSection';
-import SafetySection from './sections/SafetySection';
-import WhatIReallyWantSection from './sections/WhatIReallyWantSection';
-import FutureChaptersSection from './sections/FutureChaptersSection';
-import FinalLetterSection from './sections/FinalLetterSection';
-import ClosingMomentSection from './sections/ClosingMomentSection';
+// Lazily load below-the-fold story sections to ensure instant Hero render
+const HowItStartedSection = lazy(() => import('./sections/HowItStartedSection'));
+const VibesMatterSection = lazy(() => import('./sections/VibesMatterSection'));
+const ThingsINoticeSection = lazy(() => import('./sections/ThingsINoticeSection'));
+const YourFreedomSection = lazy(() => import('./sections/YourFreedomSection'));
+const FoodAndCareSection = lazy(() => import('./sections/FoodAndCareSection'));
+const LittleThingsSection = lazy(() => import('./sections/LittleThingsSection'));
+const LifeIImagineSection = lazy(() => import('./sections/LifeIImagineSection'));
+const TheWorldSection = lazy(() => import('./sections/TheWorldSection'));
+const MyFamilySection = lazy(() => import('./sections/MyFamilySection'));
+const AngrySection = lazy(() => import('./sections/AngrySection'));
+const DrinkingSection = lazy(() => import('./sections/DrinkingSection'));
+const SafetySection = lazy(() => import('./sections/SafetySection'));
+const WhatIReallyWantSection = lazy(() => import('./sections/WhatIReallyWantSection'));
+const FutureChaptersSection = lazy(() => import('./sections/FutureChaptersSection'));
+const FinalLetterSection = lazy(() => import('./sections/FinalLetterSection'));
+const ClosingMomentSection = lazy(() => import('./sections/ClosingMomentSection'));
 
 export default function App() {
   return (
@@ -39,24 +39,28 @@ export default function App() {
       {/* Top-Right Audio Player Controls */}
       <AudioPlayerToggle />
 
-      {/* Main Experience Flow (17 Sections) */}
+      {/* Hero Section (Renders immediately on initial load) */}
       <HeroSection />
-      <HowItStartedSection />
-      <VibesMatterSection />
-      <ThingsINoticeSection />
-      <YourFreedomSection />
-      <FoodAndCareSection />
-      <LittleThingsSection />
-      <LifeIImagineSection />
-      <TheWorldSection />
-      <MyFamilySection />
-      <AngrySection />
-      <DrinkingSection />
-      <SafetySection />
-      <WhatIReallyWantSection />
-      <FutureChaptersSection />
-      <FinalLetterSection />
-      <ClosingMomentSection />
+
+      {/* Below-the-fold Story Sections (Lazy loaded) */}
+      <Suspense fallback={null}>
+        <HowItStartedSection />
+        <VibesMatterSection />
+        <ThingsINoticeSection />
+        <YourFreedomSection />
+        <FoodAndCareSection />
+        <LittleThingsSection />
+        <LifeIImagineSection />
+        <TheWorldSection />
+        <MyFamilySection />
+        <AngrySection />
+        <DrinkingSection />
+        <SafetySection />
+        <WhatIReallyWantSection />
+        <FutureChaptersSection />
+        <FinalLetterSection />
+        <ClosingMomentSection />
+      </Suspense>
     </main>
   );
 }
