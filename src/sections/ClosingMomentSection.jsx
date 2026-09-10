@@ -95,7 +95,7 @@ export default function ClosingMomentSection() {
                 style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', alignItems: 'center' }}
               >
                 <p className="font-serif text-gradient-rose" style={{ fontSize: '1.65rem' }}>
-                  "Because I know. You need time."
+                  "Because I understand. Finding out if our vibes match takes time."
                 </p>
 
                 <p style={{ color: 'var(--text-body)', fontSize: '1.05rem', maxWidth: '450px' }}>
