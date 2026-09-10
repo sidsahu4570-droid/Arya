@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function ClosingMomentSection() {
-  const whatsappMsg = encodeURIComponent("Hey Siddharth, I read your letter. 😊");
+  const whatsappMsg = encodeURIComponent("Okay... I read everything. I need to tell you something. 😊");
   const whatsappUrl = `https://api.whatsapp.com/send?text=${whatsappMsg}`;
 
   return (
@@ -43,20 +43,14 @@ export default function ClosingMomentSection() {
           I just wanted you to know what was in my heart.
         </p>
 
-        <p style={{ color: 'var(--text-body)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: '520px', margin: '0 auto 2rem' }}>
+        <p style={{ color: 'var(--text-body)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: '520px', margin: '0 auto 2.5rem' }}>
           Take your time.<br />
           Get to know me.<br />
           And let's see where our vibes take us.
         </p>
 
-        <div style={{ marginBottom: '3rem' }}>
-          <span className="handwritten-note" style={{ fontSize: '1.55rem', color: 'var(--accent-rose)' }}>
-            Whenever you feel like talking... I'm here. ♡
-          </span>
-        </div>
-
         {/* Subtle Handwritten WhatsApp Invitation */}
-        <div style={{ marginTop: '1rem' }}>
+        <div>
           <a
             href={whatsappUrl}
             target="_blank"
@@ -65,10 +59,11 @@ export default function ClosingMomentSection() {
             style={{
               fontSize: '1.45rem',
               textDecoration: 'none',
-              display: 'inline-block'
+              display: 'inline-block',
+              lineHeight: 1.5
             }}
           >
-            <span>if you ever feel like talking → WhatsApp me ♡</span>
+            <span>"Whenever you're done reading...<br />you can tell me what you think. ♡"</span>
           </a>
         </div>
       </motion.div>
