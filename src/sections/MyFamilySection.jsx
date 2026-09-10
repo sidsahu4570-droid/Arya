@@ -47,15 +47,15 @@ export default function MyFamilySection() {
 
         <div style={{ textAlign: 'left', background: 'rgba(253, 236, 239, 0.5)', padding: '2rem', borderRadius: 'var(--radius-md)', borderLeft: '3px solid var(--accent-rose)' }}>
           <p style={{ color: 'var(--text-body)', fontSize: '1.05rem', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-            "If someday life takes us far enough that we're talking about building a home together, I want you to know that my family will always be a deeply important part of my life."
+            "If someday life takes us far enough to build something together, I want you to know that my family will always be a deeply important part of my life."
           </p>
 
           <p style={{ color: 'var(--text-body)', fontSize: '1.05rem', lineHeight: 1.85, marginBottom: '1.25rem' }}>
-            <strong className="text-rose font-serif" style={{ fontSize: '1.25rem' }}>"I won't ask you to choose between me and them.</strong> And I don't want to choose between the people I love either."
+            <strong className="text-rose font-serif" style={{ fontSize: '1.25rem' }}>"I would never want you to feel like you have to choose between me and them.</strong> And I don't want to choose between the people I love either."
           </p>
 
           <p className="font-serif text-gradient-rose" style={{ fontSize: '1.3rem', margin: 0, fontStyle: 'italic' }}>
-            "The only thing I would hope for is that we learn how to make space for each other."
+            "The only thing I would hope for is that, if life ever takes us there, we learn how to make space for each other."
           </p>
         </div>
       </div>
