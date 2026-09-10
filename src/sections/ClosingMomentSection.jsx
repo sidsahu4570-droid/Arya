@@ -1,141 +1,75 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import confetti from 'canvas-confetti';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function ClosingMomentSection() {
-  const [step, setStep] = useState(0);
-
-  const handleSomedayClick = () => {
-    setStep(2);
-    try {
-      confetti({
-        particleCount: 60,
-        spread: 70,
-        origin: { y: 0.8 },
-        colors: ['#d96b83', '#e9a6b4', '#f6d6dd', '#fffdfc']
-      });
-    } catch (e) {
-      // fallback
-    }
-  };
+  const whatsappMsg = encodeURIComponent("Hey Siddharth, I read your letter. 😊");
+  const whatsappUrl = `https://api.whatsapp.com/send?text=${whatsappMsg}`;
 
   return (
     <section
       id="closing-moment"
       style={{
-        minHeight: '75vh',
+        minHeight: '60vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        padding: '4rem 1.5rem',
+        padding: '5rem 1.5rem 6rem',
         position: 'relative',
         zIndex: 2
       }}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.92 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
         style={{ maxWidth: '650px', width: '100%' }}
       >
         <span className="handwritten-note mb-3" style={{ fontSize: '1.6rem', color: 'var(--accent-rose)' }}>
-          ♡ closing moment
+          ♡ closing thought
         </span>
 
-        <h2 className="text-heading text-gradient-rose mb-6" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', marginBottom: '1.75rem' }}>
+        <h2 className="text-heading text-gradient-rose mb-6" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', marginBottom: '1.75rem', fontWeight: 400 }}>
           One last thing...
         </h2>
 
-        <div
-          style={{
-            padding: '2rem 1rem',
-            minHeight: '220px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <AnimatePresence mode="wait">
-            {step === 0 && (
-              <motion.div
-                key="step0"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4 }}
-                style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center', width: '100%' }}
-              >
-                <p style={{ color: 'var(--text-body)', fontSize: '1.12rem', marginBottom: '0.5rem' }}>
-                  What do you want to say right now?
-                </p>
+        <p className="font-serif text-subtitle" style={{ fontSize: '1.35rem', color: 'var(--text-deep)', lineHeight: 1.85, marginBottom: '1.25rem' }}>
+          You don't have to answer anything right now.
+        </p>
 
-                <div style={{ display: 'flex', gap: '1.75rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                  <button onClick={() => setStep(1)} className="btn-romantic-link" style={{ fontSize: '1.45rem' }}>
-                    <span>Don't answer yet →</span>
-                  </button>
+        <p className="font-serif text-subtitle" style={{ fontSize: '1.35rem', color: 'var(--text-deep)', lineHeight: 1.85, marginBottom: '1.5rem' }}>
+          I just wanted you to know what was in my heart.
+        </p>
 
-                  <button onClick={handleSomedayClick} className="btn-romantic-link" style={{ fontSize: '1.45rem', color: 'var(--text-deep)' }}>
-                    <span>Maybe someday? →</span>
-                  </button>
-                </div>
-              </motion.div>
-            )}
+        <p style={{ color: 'var(--text-body)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: '520px', margin: '0 auto 2rem' }}>
+          Take your time.<br />
+          Get to know me.<br />
+          And let's see where our vibes take us.
+        </p>
 
-            {step === 1 && (
-              <motion.div
-                key="step1"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
-                style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', alignItems: 'center' }}
-              >
-                <p className="font-serif text-gradient-rose" style={{ fontSize: '1.65rem' }}>
-                  "Because I understand. Finding out if our vibes match takes time."
-                </p>
+        <div style={{ marginBottom: '3rem' }}>
+          <span className="handwritten-note" style={{ fontSize: '1.55rem', color: 'var(--accent-rose)' }}>
+            Whenever you feel like talking... I'm here. ♡
+          </span>
+        </div>
 
-                <p style={{ color: 'var(--text-body)', fontSize: '1.05rem', maxWidth: '450px' }}>
-                  Take all the time you need. No pressure, ever.
-                </p>
-
-                <button onClick={handleSomedayClick} className="btn-romantic-link" style={{ marginTop: '0.75rem', fontSize: '1.45rem', color: 'var(--text-deep)' }}>
-                  <span>Maybe someday? →</span>
-                </button>
-              </motion.div>
-            )}
-
-            {step === 2 && (
-              <motion.div
-                key="step2"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}
-              >
-                <p className="font-serif text-gradient-rose" style={{ fontSize: '1.7rem', marginBottom: '0.2rem' }}>
-                  "That's all I've ever wanted to hear."
-                </p>
-
-                <div
-                  style={{
-                    padding: '1.25rem 2.25rem',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'rgba(253, 236, 239, 0.8)',
-                    border: '1px stroke var(--accent-rose)',
-                    marginTop: '0.5rem'
-                  }}
-                >
-                  <p className="font-serif text-gradient-rose" style={{ fontSize: '1.4rem', fontWeight: 500, margin: 0 }}>
-                    Until then, let's just see where the vibes take us. 🤍
-                  </p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+        {/* Subtle Handwritten WhatsApp Invitation */}
+        <div style={{ marginTop: '1rem' }}>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-romantic-link"
+            style={{
+              fontSize: '1.45rem',
+              textDecoration: 'none',
+              display: 'inline-block'
+            }}
+          >
+            <span>if you ever feel like talking → WhatsApp me ♡</span>
+          </a>
         </div>
       </motion.div>
     </section>

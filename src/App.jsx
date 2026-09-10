@@ -57,23 +57,6 @@ export default function App() {
       <FutureChaptersSection />
       <FinalLetterSection />
       <ClosingMomentSection />
-
-      {/* Minimal Footer */}
-      <footer
-        style={{
-          textAlign: 'center',
-          padding: '2.5rem 1rem',
-          color: 'var(--text-muted)',
-          fontSize: '0.85rem',
-          borderTop: '1px solid rgba(217, 107, 131, 0.15)',
-          position: 'relative',
-          zIndex: 2
-        }}
-      >
-        <p className="font-serif" style={{ fontSize: '1rem', color: 'var(--accent-rose)' }}>
-          Made with care by Siddharth for Arya • {new Date().getFullYear()}
-        </p>
-      </footer>
     </main>
   );
 }
