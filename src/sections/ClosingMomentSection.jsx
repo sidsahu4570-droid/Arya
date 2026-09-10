@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function ClosingMomentSection() {
-  const whatsappMsg = encodeURIComponent("Okay... I read everything. I need to tell you something. 😊");
+  const whatsappMsg = encodeURIComponent("So... I read it. 😊");
   const whatsappUrl = `https://api.whatsapp.com/send?text=${whatsappMsg}`;
 
   return (
@@ -57,13 +57,12 @@ export default function ClosingMomentSection() {
             rel="noopener noreferrer"
             className="btn-romantic-link"
             style={{
-              fontSize: '1.45rem',
+              fontSize: '1.55rem',
               textDecoration: 'none',
-              display: 'inline-block',
-              lineHeight: 1.5
+              display: 'inline-block'
             }}
           >
-            <span>"Whenever you're done reading...<br />you can tell me what you think. ♡"</span>
+            <span>So... what are you thinking? ♡</span>
           </a>
         </div>
       </motion.div>
