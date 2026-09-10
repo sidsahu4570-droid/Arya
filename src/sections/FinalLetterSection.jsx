@@ -23,29 +23,26 @@ export default function FinalLetterSection() {
           margin: '0 auto'
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', borderBottom: '1px solid rgba(217, 107, 131, 0.2)', paddingBottom: '1rem' }}>
-          <span className="handwritten-note" style={{ fontSize: '1.65rem', color: 'var(--accent-rose)' }}>
-            Personal Letter
+        {/* Intimate Handwritten Header */}
+        <div style={{ marginBottom: '2.5rem' }}>
+          <span className="handwritten-note" style={{ fontSize: '2.4rem', color: 'var(--accent-rose)', display: 'block', marginBottom: '0.2rem' }}>
+            For Arya ♡
           </span>
-          {/* Delicate Rose Wax Seal Detail */}
-          <div
-            style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #d96b83, #e9a6b4)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#fffdfc',
-              fontFamily: 'var(--font-handwriting)',
-              fontWeight: 700,
-              fontSize: '1.15rem',
-              boxShadow: '0 4px 15px rgba(217, 107, 131, 0.35)'
-            }}
+          <svg
+            width="150"
+            height="12"
+            viewBox="0 0 150 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ opacity: 0.75 }}
           >
-            A&S
-          </div>
+            <path
+              d="M4 8C40 2 105 3 146 9"
+              stroke="var(--accent-rose)"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+          </svg>
         </div>
 
         <div className="font-serif" style={{ color: 'var(--text-deep)', fontSize: 'clamp(1.1rem, 2.1vw, 1.3rem)', lineHeight: 1.9 }}>
