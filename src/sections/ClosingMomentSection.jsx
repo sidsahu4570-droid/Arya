@@ -49,21 +49,31 @@ export default function ClosingMomentSection() {
           And let's see where our vibes take us.
         </p>
 
-        {/* Subtle Handwritten WhatsApp Invitation */}
-        <div>
-          <a
+        {/* Handwritten Invitation & Clickable WhatsApp Link */}
+        <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <p className="font-serif text-subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-deep)', margin: 0 }}>
+            If you want to tell me what you think...
+          </p>
+
+          <motion.a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.98 }}
             className="btn-romantic-link"
             style={{
               fontSize: '1.55rem',
+              fontFamily: 'var(--font-handwriting)',
+              color: 'var(--accent-rose)',
               textDecoration: 'none',
-              display: 'inline-block'
+              display: 'inline-block',
+              paddingBottom: '2px',
+              borderBottom: '1px dashed var(--accent-rose)'
             }}
           >
-            <span>So... what are you thinking? ♡</span>
-          </a>
+            <span>message me on WhatsApp. ♡</span>
+          </motion.a>
         </div>
       </motion.div>
     </section>
