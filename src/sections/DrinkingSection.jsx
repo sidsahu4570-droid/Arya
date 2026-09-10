@@ -40,7 +40,7 @@ export default function DrinkingSection() {
             "One tiny condition though..."
           </span>
           <p className="text-gradient-rose font-serif" style={{ fontSize: '1.45rem', fontWeight: 500, margin: '0.4rem 0 0' }}>
-            "PLEASE DON'T TRY TO BOX ME AFTER TWO DRINKS. 😂"
+            "Please don't turn into a professional boxer after two drinks. 😂"
           </p>
         </motion.div>
       </div>

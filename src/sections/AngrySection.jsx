@@ -23,8 +23,8 @@ export default function AngrySection() {
         </h3>
 
         <p style={{ color: 'var(--text-body)', fontSize: '1.08rem', lineHeight: 1.85, marginBottom: '2rem' }}>
-          You'll probably get angry.<br />
-          Maybe you'll lecture me. Maybe you'll give me <em>that look</em>. Maybe you'll ignore me for a while.
+          Maybe someday, if we're close enough, you'll be the person who tells me when I'm being stupid.<br />
+          I'd probably deserve it sometimes. 😂
         </p>
 
         <div
@@ -37,8 +37,8 @@ export default function AngrySection() {
           }}
         >
           <p className="font-serif text-gradient-rose" style={{ fontSize: '1.4rem', margin: 0, fontWeight: 500 }}>
-            "And if you ever get drunk and decide to beat me up...<br />
-            please remember I'm on your side. 😂"
+            "If I ever get it wrong, I'll always listen and try to make things right.<br />
+            Because understanding each other matters most."
           </p>
         </div>
 
@@ -49,9 +49,9 @@ export default function AngrySection() {
             style={{ fontSize: '1.45rem' }}
           >
             {dealAccepted ? (
-              <span>Deal Accepted: No Violence! 🤝</span>
+              <span>Deal Accepted: Always Communicate! 🤝</span>
             ) : (
-              <span>Proposed Deal: No Violence. Complain Instead! 😂</span>
+              <span>Proposed Deal: Always Talk It Out! 😂</span>
             )}
           </button>
         </div>

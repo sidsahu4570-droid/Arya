@@ -23,8 +23,8 @@ export default function ThingsINoticeSection() {
       text: "When exhaustion hits, you can fall asleep so peacefully that you vanish from the world for hours."
     },
     {
-      title: "Getting Annoyed at Me",
-      text: "You have zero patience for silly mistakes—and you won't hesitate to give me that look or lecture."
+      title: "When I Get It Wrong",
+      text: "Okay... I know I won't always get everything right.\n\nAnd maybe someday, if we're close enough, you'll be the person who tells me when I'm being stupid.\n\nI'd probably deserve it sometimes. 😂\n\nBut for now, I'm still learning you."
     }
   ];
 
@@ -55,7 +55,7 @@ export default function ThingsINoticeSection() {
                 {item.title}
               </h3>
             </div>
-            <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.75, paddingLeft: '1.2rem' }}>
+            <p style={{ fontSize: '1.02rem', color: 'var(--text-body)', margin: 0, lineHeight: 1.75, paddingLeft: '1.2rem', whiteSpace: 'pre-line' }}>
               {item.text}
             </p>
           </motion.div>
