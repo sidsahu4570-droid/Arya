@@ -37,6 +37,20 @@
   --shadow-glow: 0 0 35px rgba(246, 214, 221, 0.6);
 }
 
+/* Pure CSS Hero Animation (Zero JS overhead) */
+.hero-animate-in {
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0.85;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 * {
   box-sizing: border-box;
   margin: 0;
