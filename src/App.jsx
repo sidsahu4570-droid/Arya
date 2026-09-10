@@ -1,66 +1,61 @@
-import React, { Suspense, lazy } from 'react';
-import HeroSection from './sections/HeroSection';
-import StarfieldCanvas from './components/StarfieldCanvas';
-import AudioPlayerToggle from './components/AudioPlayerToggle';
+import React from 'react';
 import ScrollProgress from './components/ScrollProgress';
-
-// Import CSS
-import './styles/global.css';
-import './styles/typography.css';
-import './styles/glassmorphism.css';
-
-// Lazily load below-the-fold story sections to ensure instant Hero render
-const HowItStartedSection = lazy(() => import('./sections/HowItStartedSection'));
-const VibesMatterSection = lazy(() => import('./sections/VibesMatterSection'));
-const ThingsINoticeSection = lazy(() => import('./sections/ThingsINoticeSection'));
-const YourFreedomSection = lazy(() => import('./sections/YourFreedomSection'));
-const FoodAndCareSection = lazy(() => import('./sections/FoodAndCareSection'));
-const LittleThingsSection = lazy(() => import('./sections/LittleThingsSection'));
-const LifeIImagineSection = lazy(() => import('./sections/LifeIImagineSection'));
-const TheWorldSection = lazy(() => import('./sections/TheWorldSection'));
-const MyFamilySection = lazy(() => import('./sections/MyFamilySection'));
-const AngrySection = lazy(() => import('./sections/AngrySection'));
-const DrinkingSection = lazy(() => import('./sections/DrinkingSection'));
-const SafetySection = lazy(() => import('./sections/SafetySection'));
-const WhatIReallyWantSection = lazy(() => import('./sections/WhatIReallyWantSection'));
-const FutureChaptersSection = lazy(() => import('./sections/FutureChaptersSection'));
-const FinalLetterSection = lazy(() => import('./sections/FinalLetterSection'));
-const ClosingMomentSection = lazy(() => import('./sections/ClosingMomentSection'));
+import BackgroundEffect from './components/BackgroundEffect';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import TimelineSection from './components/TimelineSection';
+import VibesSection from './components/VibesSection';
+import NoticeSection from './components/NoticeSection';
+import SpaceSection from './components/SpaceSection';
+import FoodSection from './components/FoodSection';
+import LittleThingsSection from './components/LittleThingsSection';
+import DreamsSection from './components/DreamsSection';
+import TravelSection from './components/TravelSection';
+import FamilySection from './components/FamilySection';
+import ConflictSection from './components/ConflictSection';
+import DrinkSection from './components/DrinkSection';
+import SafetySection from './components/SafetySection';
+import WantSection from './components/WantSection';
+import FutureSection from './components/FutureSection';
+import LetterSection from './components/LetterSection';
+import ClosingSection from './components/ClosingSection';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <main style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
-      {/* Background Romantic Sunlight Canvas */}
-      <StarfieldCanvas />
-
-      {/* Top Scroll Indicator */}
+    <div className="relative min-h-screen paper-grain selection:bg-[#F8EBEF] selection:text-[#9B3B52]">
+      {/* Scroll Progress Bar */}
       <ScrollProgress />
 
-      {/* Top-Right Audio Player Controls */}
-      <AudioPlayerToggle />
+      {/* Ambient Canvas Particle Overlay */}
+      <BackgroundEffect />
 
-      {/* Hero Section (Renders immediately on initial load) */}
-      <HeroSection />
+      {/* Floating Navigation Header */}
+      <Navigation />
 
-      {/* Below-the-fold Story Sections (Lazy loaded) */}
-      <Suspense fallback={null}>
-        <HowItStartedSection />
-        <VibesMatterSection />
-        <ThingsINoticeSection />
-        <YourFreedomSection />
-        <FoodAndCareSection />
+      {/* Main Content Flow */}
+      <main className="relative z-10">
+        <Hero />
+        <TimelineSection />
+        <VibesSection />
+        <NoticeSection />
+        <SpaceSection />
+        <FoodSection />
         <LittleThingsSection />
-        <LifeIImagineSection />
-        <TheWorldSection />
-        <MyFamilySection />
-        <AngrySection />
-        <DrinkingSection />
+        <DreamsSection />
+        <TravelSection />
+        <FamilySection />
+        <ConflictSection />
+        <DrinkSection />
         <SafetySection />
-        <WhatIReallyWantSection />
-        <FutureChaptersSection />
-        <FinalLetterSection />
-        <ClosingMomentSection />
-      </Suspense>
-    </main>
+        <WantSection />
+        <FutureSection />
+        <LetterSection />
+        <ClosingSection />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
   );
 }
