@@ -7,7 +7,7 @@ export default function TheWorldSection() {
     {
       name: 'Monaco 🇲🇨',
       tag: 'The Supercar Capital',
-      description: 'Especially Monaco. Because I already know exactly what would happen there: You\'d look at the cars. I\'d look at you looking at the cars. And yes, we\'d probably spend half the trip talking about which one we\'d take home. 😂'
+      description: "Monaco is on my list for the supercars everywhere — and I'd love to take you there. Maybe you'll love the cars too, or maybe you'll just wonder why I keep staring at every Ferrari. 😂"
     },
     {
       name: 'Paris',
@@ -46,7 +46,7 @@ export default function TheWorldSection() {
       <SectionHeader
         badge="destinations"
         title="Then We'll Go."
-        subtitle="The places waiting for us across the world."
+        subtitle="I'd love to take you to places you've never seen."
       />
 
       {/* Monaco Romantic Travel Spotlight Note */}
@@ -66,9 +66,13 @@ export default function TheWorldSection() {
           Monaco
         </h3>
         <p className="font-serif text-subtitle" style={{ fontSize: '1.3rem', color: 'var(--text-deep)', lineHeight: 1.85, margin: 0 }}>
-          "Because I already know exactly what would happen there:<br />
-          <strong className="text-rose font-serif" style={{ fontSize: '1.45rem' }}>You'd look at the cars. I'd look at you looking at the cars.</strong><br />
-          And yes, we'd probably spend half the trip talking about which one we'd take home."
+          "Monaco is on my list for a very specific reason... supercars everywhere.<br />
+          And honestly, I'd love to take you there someday.<br /><br />
+          <span className="text-rose font-serif" style={{ fontSize: '1.45rem', fontWeight: 500 }}>
+            Maybe you'll love the cars too.<br />
+            Maybe you'll just enjoy the view.<br />
+            Maybe you'll wonder why I keep staring at every Ferrari. 😂
+          </span>"
         </p>
       </div>
 
