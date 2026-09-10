@@ -6,7 +6,7 @@ export default function WhatIReallyWantSection() {
     { text: "I don't need you to say yes today.", size: '1.45rem', rose: false },
     { text: "I don't need you to call this a relationship.", size: '1.45rem', rose: false },
     { text: "I don't need you to promise me anything.", size: '1.45rem', rose: false },
-    { text: "I just want time.", size: '1.95rem', rose: true },
+    { text: "I just want the chance to know you better.", size: '1.85rem', rose: true },
     { text: "I want to know you.", size: '1.55rem', rose: false },
     { text: "I want you to know me.", size: '1.55rem', rose: false },
     { text: "I want us to have enough conversations that one day...", size: '1.65rem', rose: false },
