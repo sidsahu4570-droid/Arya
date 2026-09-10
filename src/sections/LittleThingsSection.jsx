@@ -4,69 +4,134 @@ import SectionHeader from '../components/SectionHeader';
 
 export default function LittleThingsSection() {
   const fragments = [
-    { text: "Lunch hua?", sub: "Daily check-in" },
-    { text: "Dinner kar liya?", sub: "Making sure" },
-    { text: "Take care 🎀", sub: "Warm reminder" },
-    { text: "Wake up.", sub: "Morning energy" },
-    { text: "Reached home?", sub: "Safety check" },
-    { text: "Don't be angry on me.", sub: "After 😡 emoji" },
-    { text: "I am worried for you.", sub: "Genuine care" },
-    { text: "I hope you ate.", sub: "Always food" },
-    { text: "You should sleep.", sub: "Late nights" },
-    { text: "Call me when you're free.", sub: "No pressure" },
-    { text: "Did you reach safely?", sub: "Late commutes" }
+    { text: "Lunch hua?", sub: "daily check-in", styleType: "scrap", rotate: "-2deg", align: "flex-start" },
+    { text: "Dinner kar liya?", sub: "making sure", styleType: "floating", rotate: "1.5deg", align: "flex-end" },
+    { text: "Take care 🎀", sub: "warm reminder", styleType: "polaroid", rotate: "-1deg", align: "center" },
+    { text: "Wake up.", sub: "morning energy", styleType: "floating", rotate: "2.2deg", align: "flex-start" },
+    { text: "Reached home?", sub: "safety check", styleType: "scrap", rotate: "-1.8deg", align: "flex-end" },
+    { text: "Don't be angry on me.", sub: "after 😡 emoji", styleType: "polaroid", rotate: "1deg", align: "center" },
+    { text: "I am worried for you.", sub: "genuine care", styleType: "floating", rotate: "-2.5deg", align: "flex-start" },
+    { text: "I hope you ate.", sub: "always food", styleType: "scrap", rotate: "1.8deg", align: "flex-end" },
+    { text: "You should sleep.", sub: "late nights", styleType: "polaroid", rotate: "-1.2deg", align: "center" },
+    { text: "Call me when you're free.", sub: "no pressure", styleType: "floating", rotate: "2deg", align: "flex-start" },
+    { text: "Did you reach safely?", sub: "late commutes", styleType: "scrap", rotate: "-1.5deg", align: "flex-end" }
   ];
 
   return (
-    <section id="the-little-things" className="section-container" style={{ overflow: 'hidden' }}>
+    <section id="the-little-things" className="section-container">
       <SectionHeader
         badge="tiny fragments"
         title="The Little Things."
         subtitle="Small daily messages that mean more than they seem."
       />
 
+      {/* Romantic Scrapbook Canvas (No slider, no horizontal scroll, no card grid) */}
       <div
         style={{
+          maxWidth: '820px',
+          margin: '0 auto',
           display: 'flex',
-          gap: '1.25rem',
-          overflowX: 'auto',
-          paddingBottom: '2rem',
-          paddingTop: '0.5rem',
-          scrollbarWidth: 'thin',
-          WebkitOverflowScrolling: 'touch'
+          flexDirection: 'column',
+          gap: '2.5rem',
+          position: 'relative'
         }}
       >
-        {fragments.map((item, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, scale: 0.92 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }}
-            style={{
-              minWidth: '230px',
-              maxWidth: '260px',
-              flexShrink: 0,
-              padding: '1.75rem',
-              borderRadius: 'var(--radius-md)',
-              background: '#fffdfc',
-              border: '1px solid rgba(217, 107, 131, 0.2)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              boxShadow: '0 10px 30px rgba(100, 40, 55, 0.05)'
-            }}
-          >
-            <div>
-              <span className="handwritten-note" style={{ fontSize: '1.25rem', color: 'var(--accent-rose)', display: 'block', marginBottom: '0.5rem' }}>
-                {item.sub}
+        {fragments.map((item, idx) => {
+          if (item.styleType === 'scrap') {
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
+                style={{
+                  alignSelf: item.align,
+                  maxWidth: '420px',
+                  width: '90%',
+                  background: '#fffdfc',
+                  padding: '1.5rem 1.8rem',
+                  borderRadius: '16px',
+                  boxShadow: '0 8px 24px rgba(180, 90, 110, 0.07), inset 0 0 0 1px rgba(217, 107, 131, 0.18)',
+                  transform: `rotate(${item.rotate})`,
+                  position: 'relative'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.3rem' }}>
+                  <span style={{ color: 'var(--accent-rose)', fontSize: '0.9rem' }}>♡</span>
+                  <span className="handwritten-note" style={{ fontSize: '1.25rem', color: 'var(--accent-rose)' }}>
+                    {item.sub}
+                  </span>
+                </div>
+                <p className="font-serif text-gradient-rose" style={{ fontSize: '1.55rem', margin: 0, fontWeight: 500, lineHeight: 1.4 }}>
+                  "{item.text}"
+                </p>
+              </motion.div>
+            );
+          }
+
+          if (item.styleType === 'polaroid') {
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
+                style={{
+                  alignSelf: item.align,
+                  maxWidth: '440px',
+                  width: '90%',
+                  background: 'rgba(253, 236, 239, 0.55)',
+                  padding: '1.4rem 1.7rem',
+                  borderRadius: '12px',
+                  borderLeft: '3px solid var(--accent-rose)',
+                  transform: `rotate(${item.rotate})`,
+                  position: 'relative'
+                }}
+              >
+                <p className="font-serif text-deep" style={{ fontSize: '1.6rem', margin: '0 0 0.3rem', fontWeight: 500 }}>
+                  "{item.text}"
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  <span style={{ color: 'var(--accent-rose)', fontSize: '0.85rem' }}>♡</span>
+                  <span className="handwritten-note" style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>
+                    {item.sub}
+                  </span>
+                </div>
+              </motion.div>
+            );
+          }
+
+          // Floating freeform handwritten note
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 25, filter: 'blur(4px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
+              style={{
+                alignSelf: item.align,
+                maxWidth: '420px',
+                width: '90%',
+                padding: '0.8rem 1rem',
+                transform: `rotate(${item.rotate})`,
+                position: 'relative'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.2rem' }}>
+                <span style={{ color: 'var(--accent-rose)', fontSize: '1.1rem' }}>♡</span>
+                <p className="font-serif text-gradient-rose" style={{ fontSize: '1.65rem', margin: 0, fontWeight: 400 }}>
+                  "{item.text}"
+                </p>
+              </div>
+              <span className="handwritten-note" style={{ fontSize: '1.3rem', color: 'var(--text-body)', paddingLeft: '1.4rem', display: 'block' }}>
+                — {item.sub}
               </span>
-              <h3 className="font-serif text-gradient-rose" style={{ fontSize: '1.45rem', marginBottom: 0 }}>
-                "{item.text}"
-              </h3>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
