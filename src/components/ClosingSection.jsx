@@ -58,12 +58,17 @@ export default function ClosingSection() {
         transition={{ duration: 0.8 }}
         className="inline-block pt-6 border-t border-[#C86D7C]/20"
       >
-        <div className="inline-flex items-center gap-3 text-[#9B3B52] hover:text-[#C86D7C] transition-all cursor-pointer group">
-          <MessageCircle size={28} className="text-[#25D366]" />
+        <a
+          href="https://wa.me/916266273414"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 text-[#9B3B52] hover:text-[#C86D7C] hover:scale-105 transition-all cursor-pointer group"
+        >
+          <MessageCircle size={28} className="text-[#25D366] group-hover:scale-110 transition-transform" />
           <span className="font-serif-cormorant italic text-3xl sm:text-5xl font-semibold">
             {section.whatsappProminent}
           </span>
-        </div>
+        </a>
       </motion.div>
     </section>
   );
