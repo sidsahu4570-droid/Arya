@@ -62,23 +62,27 @@ export default function BackgroundEffect() {
       ctx.restore();
     };
 
+    const isMobile = window.innerWidth <= 768;
+
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((p) => {
-        p.x += p.speedX;
-        p.y += p.speedY;
+        if (!isMobile) {
+          p.x += p.speedX;
+          p.y += p.speedY;
 
-        p.opacity += Math.sin(Date.now() * p.pulseSpeed) * 0.0015;
-        if (p.opacity < 0.08) p.opacity = 0.08;
-        if (p.opacity > 0.45) p.opacity = 0.45;
+          p.opacity += Math.sin(Date.now() * p.pulseSpeed) * 0.0015;
+          if (p.opacity < 0.08) p.opacity = 0.08;
+          if (p.opacity > 0.45) p.opacity = 0.45;
 
-        if (p.y < -20) {
-          p.y = height + 20;
-          p.x = Math.random() * width;
+          if (p.y < -20) {
+            p.y = height + 20;
+            p.x = Math.random() * width;
+          }
+          if (p.x < -20) p.x = width + 20;
+          if (p.x > width + 20) p.x = -20;
         }
-        if (p.x < -20) p.x = width + 20;
-        if (p.x > width + 20) p.x = -20;
 
         if (p.isHeart) {
           drawHeart(ctx, p.x, p.y, p.size * 3, p.opacity);
@@ -90,14 +94,16 @@ export default function BackgroundEffect() {
         }
       });
 
-      animationFrameId = requestAnimationFrame(render);
+      if (!isMobile) {
+        animationFrameId = requestAnimationFrame(render);
+      }
     };
 
     render();
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
