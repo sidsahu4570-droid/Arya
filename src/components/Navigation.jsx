@@ -71,7 +71,7 @@ export default function Navigation() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#C86D7C] animate-pulse"></span>
             <span className="font-serif-cormorant text-sm italic text-[#231F20]">
-              {currentChapter ? `${currentChapter.number}. ${currentChapter.chapterName}` : 'Begin Story'}
+              {currentChapter ? currentChapter.chapterName : 'Begin Story'}
             </span>
             <ChevronDown size={14} className={`text-[#8C827E] transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
           </button>
@@ -92,7 +92,7 @@ export default function Navigation() {
                       : 'text-[#584F4C] hover:bg-[#FAF7F2]'
                   }`}
                 >
-                  <span className="truncate pr-2">{sec.number}. {sec.chapterName}</span>
+                  <span className="truncate pr-2">{sec.chapterName}</span>
                   {activeSection === sec.id && <Heart size={12} className="text-[#C86D7C] shrink-0" />}
                 </button>
               ))}

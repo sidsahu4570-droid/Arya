@@ -12,13 +12,11 @@ export default function ClosingSection() {
       {/* Header directly on Paper Canvas */}
       <div className="mb-16">
         <div className="inline-flex items-center gap-3 mb-4 justify-center">
-          <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
-            {section.number}
-          </span>
           <span className="w-8 h-px bg-[#C86D7C]/30" />
           <span className="font-handwriting text-2xl sm:text-3xl text-[#C86D7C]">
             {section.kicker}
           </span>
+          <span className="w-8 h-px bg-[#C86D7C]/30" />
         </div>
         <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20]">
           {section.heading}

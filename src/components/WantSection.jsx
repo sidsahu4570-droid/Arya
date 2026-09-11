@@ -13,13 +13,11 @@ export default function WantSection() {
     >
       <div className="max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-3 mb-4 justify-center">
-          <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
-            {section.number}
-          </span>
           <span className="w-6 h-px bg-[#C86D7C]/30" />
           <span className="font-handwriting text-3xl sm:text-4xl text-[#C86D7C]">
             {section.kicker}
           </span>
+          <span className="w-6 h-px bg-[#C86D7C]/30" />
         </div>
 
         <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-16 sm:mb-24">

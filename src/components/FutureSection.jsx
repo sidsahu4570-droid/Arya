@@ -12,13 +12,11 @@ export default function FutureSection() {
       {/* Header directly on Paper Canvas */}
       <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
         <div className="inline-flex items-center gap-3 mb-4">
-          <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
-            {section.number}
-          </span>
           <span className="w-8 h-px bg-[#C86D7C]/30" />
           <span className="font-handwriting text-2xl text-[#C86D7C]">
             {section.kicker}
           </span>
+          <span className="w-8 h-px bg-[#C86D7C]/30" />
         </div>
         <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
           {section.heading}
