@@ -17,25 +17,25 @@ export default function TimelineSection() {
   const m7 = memories[6];
 
   return (
-    <section id={section.id} className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-[#C86D7C]/15">
+    <section id={section.id} className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-[#C86D7C]/15">
       {/* Editorial Chapter Header directly on Paper Canvas */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-        <div className="inline-flex items-center gap-3 mb-3">
+      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+        <div className="inline-flex items-center gap-3 mb-4">
           <span className="w-8 h-px bg-[#C86D7C]/30" />
           <span className="font-handwriting text-2xl text-[#C86D7C]">
             {section.kicker}
           </span>
           <span className="w-8 h-px bg-[#C86D7C]/30" />
         </div>
-        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
+        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-6">
           {section.heading}
         </h2>
-        <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed max-w-2xl mx-auto mb-8">
+        <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed max-w-2xl mx-auto mb-12">
           {section.intro}
         </p>
 
         {/* Main Quote - Pure Open Editorial Typography directly on Canvas */}
-        <div className="relative max-w-3xl mx-auto my-8 sm:my-12 py-6 border-y border-[#C86D7C]/20 text-center">
+        <div className="relative max-w-3xl mx-auto my-12 py-8 border-y border-[#C86D7C]/20 text-center">
           <p className="font-serif-cormorant italic text-2xl sm:text-4xl text-[#231F20] leading-relaxed whitespace-pre-line">
             {section.mainQuote}
           </p>
@@ -49,16 +49,16 @@ export default function TimelineSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="my-12 sm:my-20 py-10 sm:py-14 border-t border-b border-[#C86D7C]/20 text-center"
+          className="my-20 py-14 border-t border-b border-[#C86D7C]/20 text-center"
         >
           {/* Header & Subheading */}
-          <div className="max-w-2xl mx-auto mb-10 sm:mb-12">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#C86D7C] font-semibold mb-2 justify-center">
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#C86D7C] font-semibold mb-3 justify-center">
               <Camera size={16} />
               <span>{section.instagramStory.subKicker}</span>
             </div>
 
-            <h3 className="font-serif-cormorant text-3xl sm:text-5xl md:text-6xl text-[#231F20] mb-3 font-light">
+            <h3 className="font-serif-cormorant text-3xl sm:text-5xl md:text-6xl text-[#231F20] mb-4 font-light">
               {section.instagramStory.subHeading}
             </h3>
 
@@ -67,8 +67,8 @@ export default function TimelineSection() {
             </span>
           </div>
 
-          {/* Memory Sequence - 5 Floating Moments Unfolding Naturally */}
-          <div className="max-w-2xl mx-auto space-y-6 sm:space-y-8 my-8 sm:my-12 text-left px-4">
+          {/* Memory Sequence - 5 Floating Moments Unfolding Naturally (No Numbered Circles, No Cards) */}
+          <div className="max-w-2xl mx-auto space-y-10 sm:space-y-14 my-14 text-left px-4">
             {/* Moment 1 */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -127,7 +127,7 @@ export default function TimelineSection() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-center pt-4"
+              className="text-center pt-6"
             >
               <p className="font-serif-cormorant italic text-3xl sm:text-5xl md:text-6xl text-[#9B3B52] font-semibold leading-tight">
                 {section.instagramStory.points[4]}
@@ -136,7 +136,7 @@ export default function TimelineSection() {
           </div>
 
           {/* Story Quote, Note & Progression - Pure Open Editorial Layout */}
-          <div className="max-w-2xl mx-auto pt-8 border-t border-[#C86D7C]/15 space-y-4">
+          <div className="max-w-2xl mx-auto pt-12 border-t border-[#C86D7C]/15 space-y-6">
             <p className="font-serif-cormorant italic text-xl sm:text-3xl text-[#231F20] leading-relaxed">
               {section.instagramStory.quote}
             </p>
@@ -145,7 +145,7 @@ export default function TimelineSection() {
               {section.instagramStory.note}
             </p>
 
-            <div className="pt-2 text-[#9B3B52] text-xs sm:text-sm font-medium leading-relaxed max-w-lg mx-auto">
+            <div className="pt-4 text-[#9B3B52] text-xs sm:text-sm font-medium leading-relaxed max-w-lg mx-auto">
               {section.instagramStory.progression}
             </div>
           </div>
@@ -155,23 +155,24 @@ export default function TimelineSection() {
       {/* 
         ==================================================
         CINEMATIC EDITORIAL STORY - MEMORIES UNFOLDING
+        (NO timeline lines, NO dots, NO numbers, NO cards, NO repeated component loops)
         ==================================================
       */}
-      <div className="pt-8 sm:pt-14">
+      <div className="pt-12 sm:pt-20">
 
-        {/* MEMORY 1: The Interview */}
+        {/* MEMORY 1: The Interview - Left aligned, elegant serif title + italic tagline + paragraph */}
         {m1 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="my-10 sm:my-16 text-left max-w-xl"
+            className="my-16 sm:my-24 text-left max-w-xl"
           >
             <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-light text-[#231F20] mb-2 tracking-wide uppercase">
               {m1.title}
             </h3>
-            <p className="font-serif-cormorant italic text-xl sm:text-2xl text-[#C86D7C] mb-3">
+            <p className="font-serif-cormorant italic text-xl sm:text-2xl text-[#C86D7C] mb-5">
               {m1.tagline}
             </p>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed">
@@ -180,19 +181,19 @@ export default function TimelineSection() {
           </motion.div>
         )}
 
-        {/* MEMORY 2: Working Together */}
+        {/* MEMORY 2: Working Together - Offset Right, Large italic tagline emphasis first */}
         {m2 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="my-12 sm:my-20 text-left sm:text-right max-w-xl sm:ml-auto"
+            className="my-20 sm:my-32 text-left sm:text-right max-w-xl sm:ml-auto"
           >
-            <p className="font-serif-cormorant italic text-3xl sm:text-5xl text-[#9B3B52] font-light leading-snug mb-3">
+            <p className="font-serif-cormorant italic text-3xl sm:text-5xl text-[#9B3B52] font-light leading-snug mb-4">
               "{m2.tagline}"
             </p>
-            <span className="text-xs uppercase tracking-widest text-[#8C827E] font-semibold block mb-2">
+            <span className="text-xs uppercase tracking-widest text-[#8C827E] font-semibold block mb-3">
               {m2.title}
             </span>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed">
@@ -201,22 +202,22 @@ export default function TimelineSection() {
           </motion.div>
         )}
 
-        {/* MEMORY 3: That Google Meet */}
+        {/* MEMORY 3: That Google Meet - Centered editorial moment with spacious borders */}
         {m3 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="my-12 sm:my-20 max-w-xl mx-auto text-center py-8 border-y border-[#C86D7C]/15"
+            className="my-24 sm:my-36 max-w-xl mx-auto text-center py-12 border-y border-[#C86D7C]/15"
           >
             <span className="font-handwriting text-2xl text-[#C86D7C] block mb-2">
               {m3.displayTitle}
             </span>
-            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#231F20] font-light mb-2">
+            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#231F20] font-light mb-3">
               {m3.title}
             </h3>
-            <p className="font-serif-cormorant italic text-xl sm:text-2xl text-[#8C827E] mb-4">
+            <p className="font-serif-cormorant italic text-xl sm:text-2xl text-[#8C827E] mb-6">
               {m3.tagline}
             </p>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed">
@@ -225,19 +226,19 @@ export default function TimelineSection() {
           </motion.div>
         )}
 
-        {/* MEMORY 4: Instagram */}
+        {/* MEMORY 4: Instagram - Minimal typography with asymmetric left padding */}
         {m4 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="my-12 sm:my-20 text-left max-w-lg sm:pl-10"
+            className="my-20 sm:my-32 text-left max-w-lg sm:pl-10"
           >
             <span className="text-xs font-semibold uppercase tracking-widest text-[#C86D7C] block mb-2">
               {m4.title}
             </span>
-            <p className="font-serif-cormorant text-2xl sm:text-4xl text-[#231F20] font-normal italic leading-snug mb-3">
+            <p className="font-serif-cormorant text-2xl sm:text-4xl text-[#231F20] font-normal italic leading-snug mb-5">
               "{m4.tagline}"
             </p>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed">
@@ -246,19 +247,19 @@ export default function TimelineSection() {
           </motion.div>
         )}
 
-        {/* MEMORY 5: More Conversations */}
+        {/* MEMORY 5: More Conversations - Large emotional typography offset left-center */}
         {m5 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="my-14 sm:my-22 md:ml-12 max-w-2xl text-left"
+            className="my-24 sm:my-36 md:ml-12 max-w-2xl text-left"
           >
-            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#231F20] font-light tracking-tight mb-2">
+            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#231F20] font-light tracking-tight mb-3">
               {m5.title}
             </h3>
-            <p className="font-serif-cormorant italic text-2xl sm:text-3xl text-[#9B3B52] mb-4">
+            <p className="font-serif-cormorant italic text-2xl sm:text-3xl text-[#9B3B52] mb-6">
               {m5.tagline}
             </p>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed max-w-xl">
@@ -267,19 +268,19 @@ export default function TimelineSection() {
           </motion.div>
         )}
 
-        {/* MEMORY 6: The Confession */}
+        {/* MEMORY 6: The Confession - Intimate centered composition with dramatic serif focus */}
         {m6 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="my-14 sm:my-22 max-w-2xl mx-auto text-center"
+            className="my-24 sm:my-36 max-w-2xl mx-auto text-center"
           >
-            <h3 className="font-serif-cormorant text-5xl sm:text-7xl font-light text-[#231F20] mb-2 tracking-wide">
+            <h3 className="font-serif-cormorant text-5xl sm:text-7xl font-light text-[#231F20] mb-3 tracking-wide">
               {m6.title}
             </h3>
-            <p className="font-handwriting text-3xl sm:text-4xl text-[#C86D7C] mb-4">
+            <p className="font-handwriting text-3xl sm:text-4xl text-[#C86D7C] mb-6">
               {m6.tagline}
             </p>
             <p className="font-sans-jakarta text-lg sm:text-xl text-[#584F4C] leading-relaxed max-w-lg mx-auto font-light">
@@ -288,22 +289,22 @@ export default function TimelineSection() {
           </motion.div>
         )}
 
-        {/* MEMORY 7: Where We Are Now */}
+        {/* MEMORY 7: Where We Are Now - Quiet, spacious concluding statement directly on paper canvas */}
         {m7 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="mt-16 sm:mt-24 mb-10 max-w-2xl mx-auto text-center py-10 sm:py-14 border-t border-[#C86D7C]/20"
+            className="mt-24 sm:mt-36 mb-16 max-w-2xl mx-auto text-center py-16 border-t border-[#C86D7C]/20"
           >
-            <span className="text-xs uppercase tracking-widest text-[#C86D7C] font-semibold block mb-3">
+            <span className="text-xs uppercase tracking-widest text-[#C86D7C] font-semibold block mb-4">
               the present moment
             </span>
-            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#231F20] font-light mb-2">
+            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#231F20] font-light mb-3">
               {m7.displayTitle}
             </h3>
-            <p className="font-serif-cormorant italic text-xl sm:text-2xl text-[#8C827E] mb-6">
+            <p className="font-serif-cormorant italic text-xl sm:text-2xl text-[#8C827E] mb-8">
               {m7.tagline}
             </p>
             <p className="font-serif-cormorant italic text-2xl sm:text-4xl text-[#9B3B52] leading-relaxed max-w-xl mx-auto">
@@ -316,7 +317,6 @@ export default function TimelineSection() {
     </section>
   );
 }
-
 
 
 

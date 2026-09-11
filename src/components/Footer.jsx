@@ -7,7 +7,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-8 sm:py-12 border-t border-[#C86D7C]/15 text-center text-xs text-[#8C827E] bg-[#FAF7F2]">
+    <footer className="py-12 border-t border-[#C86D7C]/15 text-center text-xs text-[#8C827E] bg-[#FAF7F2]">
       <div className="max-w-4xl mx-auto px-4 flex flex-col items-center gap-4">
         <button
           onClick={scrollToTop}

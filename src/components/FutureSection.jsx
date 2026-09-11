@@ -8,9 +8,9 @@ export default function FutureSection() {
   if (!section) return null;
 
   return (
-    <section id={section.id} className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
+    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
       {/* Header directly on Paper Canvas */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
         <div className="inline-flex items-center gap-3 mb-4">
           <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
             {section.number}
@@ -29,11 +29,11 @@ export default function FutureSection() {
       </div>
 
       {/* 3 Stage Progression Tracker directly on Canvas */}
-      <div className="relative max-w-3xl mx-auto my-8 sm:my-12">
+      <div className="relative max-w-3xl mx-auto my-16">
         {/* Connecting Vertical Progress Line */}
         <div className="absolute left-6 sm:left-8 top-8 bottom-8 w-0.5 bg-[#C86D7C]/30" />
 
-        <div className="space-y-8 sm:space-y-12 relative">
+        <div className="space-y-12 sm:space-y-16 relative">
           {section.stages.map((stage, idx) => (
             <motion.div
               key={stage.badge}

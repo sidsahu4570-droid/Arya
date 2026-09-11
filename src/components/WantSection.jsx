@@ -9,7 +9,7 @@ export default function WantSection() {
   return (
     <section
       id={section.id}
-      className="py-16 sm:py-28 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-gradient-to-b from-[#FAF7F2] via-[#FBF1F3]/50 to-[#FAF7F2] border-y border-[#C86D7C]/15"
+      className="py-32 sm:py-48 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-gradient-to-b from-[#FAF7F2] via-[#FBF1F3]/50 to-[#FAF7F2] border-y border-[#C86D7C]/15"
     >
       <div className="max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-3 mb-4 justify-center">
@@ -22,11 +22,11 @@ export default function WantSection() {
           </span>
         </div>
 
-        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-8 sm:mb-14">
+        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-16 sm:mb-24">
           {section.heading}
         </h2>
 
-        <div className="space-y-5 sm:space-y-8 max-w-3xl mx-auto">
+        <div className="space-y-8 sm:space-y-12 max-w-3xl mx-auto">
           {section.lines.map((line, idx) => (
             <motion.p
               key={idx}

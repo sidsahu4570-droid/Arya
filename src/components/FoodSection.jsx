@@ -8,10 +8,10 @@ export default function FoodSection() {
   if (!section) return null;
 
   return (
-    <section id={section.id} className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
+    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
       {/* Kicker & Header directly on Paper Canvas */}
-      <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
-        <div className="inline-flex items-center gap-3 mb-3">
+      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+        <div className="inline-flex items-center gap-3 mb-4">
           <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
             {section.number}
           </span>
@@ -20,7 +20,7 @@ export default function FoodSection() {
             {section.kicker}
           </span>
         </div>
-        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-3">
+        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
           {section.heading}
         </h2>
         <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed">
@@ -29,7 +29,7 @@ export default function FoodSection() {
       </div>
 
       {/* Dialogue Chat Fragment Stream directly on Canvas */}
-      <div className="max-w-md mx-auto mb-8 sm:mb-12 space-y-3 sm:space-y-4">
+      <div className="max-w-md mx-auto mb-16 space-y-4">
         {section.dialogue.map((d, idx) => (
           <motion.div
             key={idx}
@@ -56,7 +56,7 @@ export default function FoodSection() {
       </div>
 
       {/* Main Quote Block directly on Paper Canvas */}
-      <div className="max-w-3xl mx-auto my-6 sm:my-10 py-6 border-y border-[#C86D7C]/20 text-center">
+      <div className="max-w-3xl mx-auto my-16 py-8 border-y border-[#C86D7C]/20 text-center">
         <p className="font-serif-cormorant italic text-2xl sm:text-4xl text-[#231F20] leading-relaxed whitespace-pre-line">
           {section.paragraphQuote}
         </p>
@@ -69,14 +69,14 @@ export default function FoodSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="my-8 sm:my-14 py-8 sm:py-12 border-t border-b border-[#C86D7C]/20 text-center max-w-3xl mx-auto"
+          className="my-16 py-12 border-t border-b border-[#C86D7C]/20 text-center max-w-3xl mx-auto"
         >
-          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-[#C86D7C] font-semibold mb-3">
+          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-[#C86D7C] font-semibold mb-4">
             <UtensilsCrossed size={16} />
             <span>{section.indoreConnection.subKicker}</span>
           </div>
 
-          <p className="font-serif-cormorant italic text-2xl sm:text-4xl text-[#231F20] leading-relaxed mb-4 whitespace-pre-line font-normal">
+          <p className="font-serif-cormorant italic text-2xl sm:text-4xl text-[#231F20] leading-relaxed mb-6 whitespace-pre-line font-normal">
             {section.indoreConnection.quote}
           </p>
 
@@ -88,6 +88,5 @@ export default function FoodSection() {
     </section>
   );
 }
-
 
 

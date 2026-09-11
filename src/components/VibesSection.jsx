@@ -7,10 +7,10 @@ export default function VibesSection() {
   if (!section) return null;
 
   return (
-    <section id={section.id} className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
+    <section id={section.id} className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
       {/* Chapter Kicker & Header directly on Paper Canvas */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-        <div className="inline-flex items-center gap-3 mb-3">
+      <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+        <div className="inline-flex items-center gap-3 mb-4">
           <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
             {section.number}
           </span>
@@ -19,15 +19,15 @@ export default function VibesSection() {
             {section.kicker}
           </span>
         </div>
-        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-3">
+        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
           {section.heading}
         </h2>
-        <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed mb-6">
+        <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed mb-8">
           {section.subtitle}
         </p>
 
         {/* Age Difference Line */}
-        <div className="inline-flex items-center gap-4 text-sm font-medium mb-8">
+        <div className="inline-flex items-center gap-4 text-sm font-medium mb-12">
           <span className="font-serif-cormorant text-lg sm:text-xl text-[#231F20]">
             {section.ages.arya}
           </span>
@@ -38,16 +38,16 @@ export default function VibesSection() {
         </div>
 
         {/* Main Quote directly on Paper Canvas */}
-        <div className="relative max-w-3xl mx-auto my-6 sm:my-10 py-6 border-y border-[#C86D7C]/20 text-center">
-          <p className="font-serif-cormorant italic text-3xl sm:text-5xl md:text-6xl text-[#231F20] leading-tight mb-6 whitespace-pre-line">
+        <div className="relative max-w-3xl mx-auto my-10 py-8 border-y border-[#C86D7C]/20 text-center">
+          <p className="font-serif-cormorant italic text-3xl sm:text-5xl md:text-6xl text-[#231F20] leading-tight mb-8 whitespace-pre-line">
             {section.mainQuote}
           </p>
 
-          <p className="text-xs uppercase tracking-widest text-[#8C827E] font-medium mb-3">
+          <p className="text-xs uppercase tracking-widest text-[#8C827E] font-medium mb-4">
             {section.reflection}
           </p>
 
-          <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#9B3B52] font-normal italic mb-4">
+          <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#9B3B52] font-normal italic mb-6">
             {section.bigQuestion}
           </h3>
 
@@ -57,7 +57,7 @@ export default function VibesSection() {
         </div>
 
         {/* Sub-heading for Discovery */}
-        <div className="pt-10 sm:pt-14">
+        <div className="pt-14 sm:pt-16">
           <span className="font-handwriting text-3xl sm:text-4xl text-[#C86D7C]">
             {section.discoverKicker}
           </span>
@@ -65,7 +65,7 @@ export default function VibesSection() {
       </div>
 
       {/* 12 Discovery Concepts - Open Grid directly on Canvas (No Cards) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 pt-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 pt-4">
         {section.discoverCards.map((card, idx) => (
           <motion.div
             key={card.title}
@@ -73,9 +73,9 @@ export default function VibesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: idx * 0.04 }}
-            className="pt-3 border-t border-[#C86D7C]/20"
+            className="pt-4 border-t border-[#C86D7C]/20"
           >
-            <div className="flex items-center gap-2 mb-1.5">
+            <div className="flex items-center gap-2 mb-2">
               <span className="text-[#C86D7C] text-xs">♡</span>
               <h4 className="font-serif-cormorant text-2xl sm:text-3xl text-[#231F20] font-normal">
                 {card.title}
@@ -90,6 +90,5 @@ export default function VibesSection() {
     </section>
   );
 }
-
 
 
