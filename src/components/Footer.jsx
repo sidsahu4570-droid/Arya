@@ -22,10 +22,6 @@ export default function Footer() {
           <Heart size={12} className="text-[#C86D7C] fill-current" />
           <span>for Arya</span>
         </div>
-
-        <p className="text-[11px] font-sans-jakarta text-[#8C827E]">
-          © {new Date().getFullYear()} • Frontend Only Digital Love Letter
-        </p>
       </div>
     </footer>
   );
