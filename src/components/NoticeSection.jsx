@@ -9,12 +9,12 @@ export default function NoticeSection() {
 
   if (!section) return null;
 
-  const obs = section.observations || [];
-  const obs1 = obs[0];
-  const obs2 = obs[1];
-  const obs3 = obs[2];
-  const obs4 = obs[3];
-  const obs5 = obs[4];
+  const observations = section.observations || [];
+  const obs1 = observations[0];
+  const obs2 = observations[1];
+  const obs3 = observations[2];
+  const obs4 = observations[3];
+  const obs5 = observations[4];
 
   const handleEmojiClick = (e) => {
     setEmojiRevealed(!emojiRevealed);
@@ -36,8 +36,8 @@ export default function NoticeSection() {
   };
 
   return (
-    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
-      {/* Editorial Header directly on Paper Canvas */}
+    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-t border-[#C86D7C]/15">
+      {/* Chapter Header directly on Paper Canvas */}
       <div className="text-center max-w-3xl mx-auto mb-20 sm:mb-32">
         <div className="inline-flex items-center gap-3 mb-4">
           <span className="w-8 h-px bg-[#C86D7C]/30" />
@@ -57,21 +57,21 @@ export default function NoticeSection() {
       {/* 
         ==================================================
         FREE-FLOWING EDITORIAL COLLECTION OF OBSERVATIONS
-        (NO 01..05 numbers, NO repeated hearts, NO horizontal line dividers between items, NO cards)
+        (NO 01/02/03 numbers, NO repeated hearts, NO horizontal lines between items, NO cards)
         ==================================================
       */}
-      <div className="space-y-24 sm:space-y-36">
+      <div className="pt-8 sm:pt-16">
 
-        {/* Observation 1: Fiercely Independent - Left-aligned, large elegant serif title */}
+        {/* Observation 1: Fiercely Independent - Left Aligned, Large Serif Title */}
         {obs1 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl text-left"
+            className="my-24 sm:my-36 text-left max-w-xl"
           >
-            <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-light text-[#231F20] mb-3 tracking-wide">
+            <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-light text-[#231F20] mb-3 uppercase tracking-wide">
               {obs1.title}
             </h3>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
@@ -80,52 +80,52 @@ export default function NoticeSection() {
           </motion.div>
         )}
 
-        {/* Observation 2: Gym & Routine - Offset right-aligned layout with subtle typography */}
+        {/* Observation 2: Gym & Routine - Offset Right, Understated Italic Heading */}
         {obs2 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-md sm:ml-auto text-left sm:text-right"
+            className="my-32 sm:my-48 text-left sm:text-right max-w-xl sm:ml-auto"
           >
-            <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E] block mb-2">
+            <h3 className="font-serif-cormorant italic text-3xl sm:text-4xl text-[#C86D7C] font-normal mb-3">
               {obs2.title}
-            </span>
+            </h3>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
               {obs2.text}
             </p>
           </motion.div>
         )}
 
-        {/* Observation 3: Food is an Afterthought - Centered spacious moment with bold wine serif title */}
+        {/* Observation 3: Food is an Afterthought - Oversized Centered Editorial Statement */}
         {obs3 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl mx-auto text-center py-6"
+            className="my-36 sm:my-52 max-w-xl mx-auto text-center py-6"
           >
-            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#9B3B52] font-light mb-4 leading-tight">
-              "{obs3.title}"
+            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#231F20] font-light mb-4">
+              {obs3.title}
             </h3>
-            <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed max-w-lg mx-auto">
-              {obs3.text}
+            <p className="font-serif-cormorant italic text-xl sm:text-2xl text-[#544C4A] leading-relaxed">
+              "{obs3.text}"
             </p>
           </motion.div>
         )}
 
-        {/* Observation 4: Disappearing into Sleep - Asymmetric left-center placement */}
+        {/* Observation 4: Disappearing into Sleep - Intimate Soft Layout with Left Padding */}
         {obs4 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-lg md:pl-16 text-left"
+            className="my-32 sm:my-48 text-left max-w-lg sm:pl-12"
           >
-            <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-light text-[#231F20] mb-3">
+            <h3 className="font-serif-cormorant italic text-3xl sm:text-5xl text-[#9B3B52] font-normal mb-3">
               {obs4.title}
             </h3>
             <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
@@ -134,16 +134,16 @@ export default function NoticeSection() {
           </motion.div>
         )}
 
-        {/* Observation 5: When I Get It Wrong - Intimate statement framed with subtle top/bottom borders */}
+        {/* Observation 5: When I Get It Wrong - Wide Central Highlight with Subtle Border Accent */}
         {obs5 && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl mx-auto text-center py-12 border-y border-[#C86D7C]/15 my-12"
+            className="my-36 sm:my-52 max-w-2xl mx-auto text-center py-12 border-y border-[#C86D7C]/15"
           >
-            <h3 className="font-handwriting text-3xl sm:text-4xl text-[#C86D7C] mb-4">
+            <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-light text-[#231F20] mb-6 uppercase tracking-wide">
               {obs5.title}
             </h3>
             <p className="font-serif-cormorant italic text-xl sm:text-3xl text-[#231F20] leading-relaxed whitespace-pre-line">
@@ -161,7 +161,7 @@ export default function NoticeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-28 sm:mt-40 py-12 border-t border-b border-[#C86D7C]/20 text-center max-w-3xl mx-auto"
+          className="mt-24 sm:mt-36 py-16 border-t border-b border-[#C86D7C]/20 text-center max-w-3xl mx-auto"
         >
           <span className="font-handwriting text-2xl sm:text-3xl text-[#C86D7C] block mb-2">
             {section.emojiIncident.subKicker}
