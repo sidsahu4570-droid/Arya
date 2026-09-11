@@ -9,6 +9,13 @@ export default function NoticeSection() {
 
   if (!section) return null;
 
+  const obs = section.observations || [];
+  const obs1 = obs[0];
+  const obs2 = obs[1];
+  const obs3 = obs[2];
+  const obs4 = obs[3];
+  const obs5 = obs[4];
+
   const handleEmojiClick = (e) => {
     setEmojiRevealed(!emojiRevealed);
     if (!emojiRevealed) {
@@ -22,7 +29,7 @@ export default function NoticeSection() {
           origin: { x, y },
           colors: ['#C86D7C', '#F8EBEF', '#E28D9D', '#C5A059']
         });
-      } catch (err) {
+      } catch (_err) {
         // fallback
       }
     }
@@ -30,16 +37,14 @@ export default function NoticeSection() {
 
   return (
     <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
-      {/* Chapter Header directly on Paper Canvas */}
-      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+      {/* Editorial Header directly on Paper Canvas */}
+      <div className="text-center max-w-3xl mx-auto mb-20 sm:mb-32">
         <div className="inline-flex items-center gap-3 mb-4">
-          <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
-            {section.number}
-          </span>
           <span className="w-8 h-px bg-[#C86D7C]/30" />
           <span className="font-handwriting text-2xl text-[#C86D7C]">
             {section.kicker}
           </span>
+          <span className="w-8 h-px bg-[#C86D7C]/30" />
         </div>
         <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
           {section.heading}
@@ -49,39 +54,104 @@ export default function NoticeSection() {
         </p>
       </div>
 
-      {/* Editorial Magazine Grid directly on Paper Canvas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 mb-24">
-        {section.observations.map((obs, idx) => {
-          const isWide = obs.title === 'When I Get It Wrong';
+      {/* 
+        ==================================================
+        FREE-FLOWING EDITORIAL COLLECTION OF OBSERVATIONS
+        (NO 01..05 numbers, NO repeated hearts, NO horizontal line dividers between items, NO cards)
+        ==================================================
+      */}
+      <div className="space-y-24 sm:space-y-36">
 
-          return (
-            <motion.div
-              key={obs.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.08 }}
-              className={`relative pt-6 border-t border-[#C86D7C]/20 ${
-                isWide ? 'md:col-span-2 pt-8 border-t-2 border-[#C86D7C]/30' : ''
-              }`}
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[#C86D7C] text-xs">♡</span>
-                <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
-                  0{idx + 1}
-                </span>
-                <h3 className="font-serif-cormorant text-2xl sm:text-4xl text-[#231F20] font-normal ml-1">
-                  {obs.title}
-                </h3>
-              </div>
-              <p className={`font-sans-jakarta text-sm sm:text-base text-[#544C4A] leading-relaxed whitespace-pre-line ${
-                isWide ? 'font-serif-cormorant italic text-xl sm:text-2xl text-[#362F2D]' : ''
-              }`}>
-                {obs.text}
-              </p>
-            </motion.div>
-          );
-        })}
+        {/* Observation 1: Fiercely Independent - Left-aligned, large elegant serif title */}
+        {obs1 && (
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-xl text-left"
+          >
+            <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-light text-[#231F20] mb-3 tracking-wide">
+              {obs1.title}
+            </h3>
+            <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
+              {obs1.text}
+            </p>
+          </motion.div>
+        )}
+
+        {/* Observation 2: Gym & Routine - Offset right-aligned layout with subtle typography */}
+        {obs2 && (
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-md sm:ml-auto text-left sm:text-right"
+          >
+            <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E] block mb-2">
+              {obs2.title}
+            </span>
+            <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
+              {obs2.text}
+            </p>
+          </motion.div>
+        )}
+
+        {/* Observation 3: Food is an Afterthought - Centered spacious moment with bold wine serif title */}
+        {obs3 && (
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-xl mx-auto text-center py-6"
+          >
+            <h3 className="font-serif-cormorant text-4xl sm:text-6xl text-[#9B3B52] font-light mb-4 leading-tight">
+              "{obs3.title}"
+            </h3>
+            <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed max-w-lg mx-auto">
+              {obs3.text}
+            </p>
+          </motion.div>
+        )}
+
+        {/* Observation 4: Disappearing into Sleep - Asymmetric left-center placement */}
+        {obs4 && (
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-lg md:pl-16 text-left"
+          >
+            <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-light text-[#231F20] mb-3">
+              {obs4.title}
+            </h3>
+            <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
+              {obs4.text}
+            </p>
+          </motion.div>
+        )}
+
+        {/* Observation 5: When I Get It Wrong - Intimate statement framed with subtle top/bottom borders */}
+        {obs5 && (
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl mx-auto text-center py-12 border-y border-[#C86D7C]/15 my-12"
+          >
+            <h3 className="font-handwriting text-3xl sm:text-4xl text-[#C86D7C] mb-4">
+              {obs5.title}
+            </h3>
+            <p className="font-serif-cormorant italic text-xl sm:text-3xl text-[#231F20] leading-relaxed whitespace-pre-line">
+              {obs5.text}
+            </p>
+          </motion.div>
+        )}
+
       </div>
 
       {/* Infamous Emoji Incident - Open Layout directly on Canvas */}
@@ -91,7 +161,7 @@ export default function NoticeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="my-16 py-12 border-t border-b border-[#C86D7C]/20 text-center max-w-3xl mx-auto"
+          className="mt-28 sm:mt-40 py-12 border-t border-b border-[#C86D7C]/20 text-center max-w-3xl mx-auto"
         >
           <span className="font-handwriting text-2xl sm:text-3xl text-[#C86D7C] block mb-2">
             {section.emojiIncident.subKicker}
@@ -148,5 +218,6 @@ export default function NoticeSection() {
     </section>
   );
 }
+
 
 
