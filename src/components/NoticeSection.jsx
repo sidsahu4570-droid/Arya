@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { aryaContent } from '../data/aryaContent';
-import { Sparkles, MessageCircleWarning, Heart } from 'lucide-react';
 
 export default function NoticeSection() {
   const section = aryaContent.sections.find((s) => s.id === 'things-i-notice');
@@ -30,13 +29,19 @@ export default function NoticeSection() {
   };
 
   return (
-    <section id={section.id} className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-[#C86D7C]/15">
-      {/* Chapter Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <span className="font-handwriting text-2xl sm:text-3xl text-[#C86D7C] block mb-2">
-          {section.kicker}
-        </span>
-        <h2 className="font-serif-cormorant text-4xl sm:text-6xl font-light text-[#231F20] mb-4">
+    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
+      {/* Chapter Header directly on Paper Canvas */}
+      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+        <div className="inline-flex items-center gap-3 mb-4">
+          <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
+            {section.number}
+          </span>
+          <span className="w-8 h-px bg-[#C86D7C]/30" />
+          <span className="font-handwriting text-2xl text-[#C86D7C]">
+            {section.kicker}
+          </span>
+        </div>
+        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
           {section.heading}
         </h2>
         <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
@@ -44,58 +49,64 @@ export default function NoticeSection() {
         </p>
       </div>
 
-      {/* Grid of Observations */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-        {section.observations.map((obs, idx) => (
-          <motion.div
-            key={obs.title}
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.08 }}
-            className={`editorial-card p-6 sm:p-8 ${
-              obs.title === 'When I Get It Wrong' ? 'md:col-span-2 lg:col-span-2 bg-[#FFFDF9]' : ''
-            }`}
-          >
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-[#C86D7C] text-sm">♡</span>
-              <h3 className="font-serif-cormorant text-2xl text-[#231F20] font-normal">
-                {obs.title}
-              </h3>
-            </div>
-            <p className="font-sans-jakarta text-sm sm:text-base text-[#544C4A] leading-relaxed whitespace-pre-line">
-              {obs.text}
-            </p>
-          </motion.div>
-        ))}
+      {/* Editorial Magazine Grid directly on Paper Canvas */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 mb-24">
+        {section.observations.map((obs, idx) => {
+          const isWide = obs.title === 'When I Get It Wrong';
+
+          return (
+            <motion.div
+              key={obs.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.08 }}
+              className={`relative pt-6 border-t border-[#C86D7C]/20 ${
+                isWide ? 'md:col-span-2 pt-8 border-t-2 border-[#C86D7C]/30' : ''
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[#C86D7C] text-xs">♡</span>
+                <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
+                  0{idx + 1}
+                </span>
+                <h3 className="font-serif-cormorant text-2xl sm:text-4xl text-[#231F20] font-normal ml-1">
+                  {obs.title}
+                </h3>
+              </div>
+              <p className={`font-sans-jakarta text-sm sm:text-base text-[#544C4A] leading-relaxed whitespace-pre-line ${
+                isWide ? 'font-serif-cormorant italic text-xl sm:text-2xl text-[#362F2D]' : ''
+              }`}>
+                {obs.text}
+              </p>
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* The Infamous Emoji Incident Box */}
+      {/* Infamous Emoji Incident - Open Layout directly on Canvas */}
       {section.emojiIncident && (
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="editorial-card p-8 sm:p-14 text-center max-w-3xl mx-auto bg-gradient-to-br from-[#FFFDF9] via-[#FAF5EE] to-[#FBF1F3] relative overflow-hidden border-2 border-[#C86D7C]/25 shadow-md"
+          className="my-16 py-12 border-t border-b border-[#C86D7C]/20 text-center max-w-3xl mx-auto"
         >
           <span className="font-handwriting text-2xl sm:text-3xl text-[#C86D7C] block mb-2">
             {section.emojiIncident.subKicker}
           </span>
-          <h3 className="font-serif-cormorant text-2xl sm:text-4xl text-[#231F20] mb-6 font-normal">
+          <h3 className="font-serif-cormorant text-3xl sm:text-5xl text-[#231F20] mb-6 font-normal">
             {section.emojiIncident.subHeading}
           </h3>
 
-          {/* Interactive Emoji Container with Pulsing Attention Ring */}
+          {/* Interactive Emoji Container */}
           <div className="my-8 flex justify-center">
             <div className="relative inline-block">
-              {/* Pulsing Outer Attention Ring */}
-              <div className="absolute -inset-3 rounded-full bg-[#C86D7C]/20 animate-ping pointer-events-none opacity-75" />
-
               <button
                 onClick={handleEmojiClick}
                 aria-label="Tap emoji to reveal incident text"
-                className="relative z-10 p-6 rounded-full bg-[#FFFFFF] border-2 border-[#C86D7C] shadow-md hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-center"
+                className="relative z-10 p-5 rounded-full bg-transparent hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-center"
               >
                 <span className="text-6xl sm:text-7xl group-hover:rotate-12 transition-transform duration-300 select-none">
                   {section.emojiIncident.emoji}
@@ -107,7 +118,7 @@ export default function NoticeSection() {
             </div>
           </div>
 
-          {/* Revealed Text Animation */}
+          {/* Revealed Text Animation - Open Layout */}
           <AnimatePresence>
             {emojiRevealed && (
               <motion.div
@@ -115,14 +126,14 @@ export default function NoticeSection() {
                 animate={{ opacity: 1, height: 'auto', scale: 1 }}
                 exit={{ opacity: 0, height: 0, scale: 0.96 }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="mt-6 p-6 sm:p-8 rounded-2xl bg-[#FFFFFF] border border-[#C86D7C]/25 text-left space-y-4 shadow-sm"
+                className="mt-6 pt-6 border-t border-[#C86D7C]/20 text-left space-y-4"
               >
                 {section.emojiIncident.revealedContent.map((line, idx) => (
                   <p
                     key={idx}
-                    className={`font-serif-cormorant text-lg sm:text-2xl text-[#362F2D] ${
+                    className={`font-serif-cormorant text-xl sm:text-3xl text-[#231F20] ${
                       idx === 2
-                        ? 'font-sans-jakarta text-sm font-medium text-[#C86D7C] pt-3 border-t border-[#C86D7C]/15'
+                        ? 'font-sans-jakarta text-sm font-medium text-[#9B3B52] pt-4 border-t border-[#C86D7C]/15'
                         : 'italic'
                     }`}
                   >
@@ -137,3 +148,5 @@ export default function NoticeSection() {
     </section>
   );
 }
+
+

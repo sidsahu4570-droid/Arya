@@ -8,13 +8,19 @@ export default function SpaceSection() {
   if (!section) return null;
 
   return (
-    <section id={section.id} className="py-28 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
-      {/* Kicker & Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <span className="font-handwriting text-2xl text-[#C86D7C] block mb-2">
-          {section.kicker}
-        </span>
-        <h2 className="font-serif-cormorant text-4xl sm:text-6xl font-light text-[#231F20] mb-4">
+    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
+      {/* Kicker & Header directly on Paper Canvas */}
+      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+        <div className="inline-flex items-center gap-3 mb-4">
+          <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
+            {section.number}
+          </span>
+          <span className="w-8 h-px bg-[#C86D7C]/30" />
+          <span className="font-handwriting text-2xl text-[#C86D7C]">
+            {section.kicker}
+          </span>
+        </div>
+        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
           {section.heading}
         </h2>
         <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed">
@@ -22,45 +28,53 @@ export default function SpaceSection() {
         </p>
       </div>
 
-      {/* Major Editorial Quote Block */}
+      {/* Pure Open Editorial Quote directly on Canvas */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.9 }}
-        className="quote-card p-8 sm:p-14 mb-16 bg-[#FFFDF9] border-l-4 border-[#C86D7C] shadow-sm"
+        transition={{ duration: 0.8 }}
+        className="max-w-3xl mx-auto my-16 py-8 border-y border-[#C86D7C]/20 text-center relative px-4"
       >
-        <p className="font-serif-cormorant italic text-2xl sm:text-4xl text-[#231F20] leading-relaxed whitespace-pre-line mb-6 font-normal">
+        <p className="font-serif-cormorant italic text-3xl sm:text-5xl text-[#231F20] leading-relaxed whitespace-pre-line mb-6 font-normal">
           {section.quote}
         </p>
-        <p className="text-right font-handwriting text-2xl text-[#C86D7C]">
+        <p className="font-handwriting text-2xl sm:text-4xl text-[#C86D7C]">
           {section.tag}
         </p>
       </motion.div>
 
-      {/* Comparison Layout Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Open Typographic Split Lines directly on Canvas */}
+      <div className="max-w-3xl mx-auto divide-y divide-[#C86D7C]/15 my-16">
         {section.comparisons.map((item, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className="editorial-card p-6 text-center flex flex-col items-center justify-center bg-[#FFFFFF]/80"
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            className="py-6 grid grid-cols-1 md:grid-cols-12 items-center gap-4 text-center md:text-left"
           >
-            <span className="font-serif-cormorant text-lg text-[#8C827E] line-through mb-2">
-              {item.left}
-            </span>
-            <div className="my-2 text-[#C86D7C] rotate-90 md:rotate-0">
-              <ArrowRight size={18} />
+            <div className="md:col-span-5 text-right md:pr-4">
+              <span className="font-serif-cormorant text-xl text-[#8C827E] line-through">
+                {item.left}
+              </span>
             </div>
-            <span className="font-serif-cormorant font-semibold text-2xl text-[#231F20]">
-              {item.right}
-            </span>
+
+            <div className="md:col-span-2 flex justify-center text-[#C86D7C]">
+              <ArrowRight size={18} className="rotate-90 md:rotate-0 opacity-70" />
+            </div>
+
+            <div className="md:col-span-5 text-left md:pl-4">
+              <span className="font-serif-cormorant font-medium text-2xl sm:text-3xl text-[#9B3B52]">
+                {item.right}
+              </span>
+            </div>
           </motion.div>
         ))}
       </div>
     </section>
   );
 }
+
+

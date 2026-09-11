@@ -3,8 +3,7 @@
 @layer base {
   :root {
     --bg-paper: #FAF7F2;
-    --bg-paper-alt: #F5EFE6;
-    --bg-card: #FFFFFF;
+    --bg-paper-alt: #F4EFE6;
     --text-primary: #231F20;
     --text-secondary: #544C4A;
     --text-muted: #8A817D;
@@ -25,7 +24,7 @@
     color: var(--text-primary);
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
-    line-height: 1.75;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -61,54 +60,28 @@
 /* Fine Paper Noise Grain Background */
 .paper-grain {
   background-color: #FAF7F2;
-  background-image: radial-gradient(rgba(200, 109, 124, 0.06) 1px, transparent 1px), radial-gradient(rgba(35, 31, 32, 0.04) 1px, #FAF7F2 1px);
-  background-size: 24px 24px;
-  background-position: 0 0, 12px 12px;
+  background-image: radial-gradient(rgba(200, 109, 124, 0.04) 1px, transparent 1px), radial-gradient(rgba(35, 31, 32, 0.03) 1px, #FAF7F2 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
 }
 
-.bg-paper-gradient {
-  background: linear-gradient(180deg, #FAF7F2 0%, #F6F0E6 50%, #FAF7F2 100%);
-}
-
-.bg-rose-soft {
-  background-color: #F8EBEF;
-}
-
-/* Editorial Glass & Card Styling */
-.editorial-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(200, 109, 124, 0.16);
-  border-radius: 1.25rem;
-  box-shadow: 0 10px 30px -10px rgba(84, 76, 74, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.editorial-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(200, 109, 124, 0.35);
-  box-shadow: 0 24px 48px -12px rgba(200, 109, 124, 0.12);
-}
-
-/* Letter Excerpt Quote Styling */
-.quote-card {
-  background: #FFFDF9;
-  border-left: 3px solid #C86D7C;
-  border-radius: 0 1.25rem 1.25rem 0;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+/* Open Editorial Quotation Watermark (Directly on Paper Canvas) */
+.open-quote-watermark {
   position: relative;
 }
 
-.quote-card::before {
+.open-quote-watermark::before {
   content: '“';
   position: absolute;
-  top: -15px;
-  left: 15px;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 5rem;
-  color: rgba(200, 109, 124, 0.15);
+  font-size: 8rem;
+  color: rgba(200, 109, 124, 0.12);
   line-height: 1;
   pointer-events: none;
+  user-select: none;
 }
 
 /* Scroll Progress Bar */
@@ -137,3 +110,5 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #C86D7C;
 }
+
+
