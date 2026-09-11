@@ -7,9 +7,9 @@ export default function ConflictSection() {
   if (!section) return null;
 
   return (
-    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
+    <section id={section.id} className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-[#C86D7C]/15">
       {/* Header Directly on Page */}
-      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
         <div className="inline-flex items-center gap-3 mb-3">
           <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
             {section.number}
@@ -22,7 +22,7 @@ export default function ConflictSection() {
         <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
           {section.heading}
         </h2>
-        <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed mb-6">
+        <p className="font-sans-jakarta text-base sm:text-lg text-[#584F4C] leading-relaxed mb-4">
           {section.subtitle}
         </p>
         <span className="font-handwriting text-2xl text-[#C86D7C] block">
@@ -31,14 +31,14 @@ export default function ConflictSection() {
       </div>
 
       {/* Main Quote Statement Directly on Page Background */}
-      <div className="max-w-3xl mx-auto my-12 text-center">
+      <div className="max-w-3xl mx-auto my-6 sm:my-10 text-center">
         <p className="font-serif-cormorant italic text-3xl sm:text-5xl text-[#231F20] leading-relaxed font-normal">
           {section.headlineQuote}
         </p>
       </div>
 
       {/* Paragraphs */}
-      <div className="space-y-6 max-w-3xl mx-auto mb-16">
+      <div className="space-y-4 max-w-3xl mx-auto mb-10">
         {section.paragraphs.map((p, idx) => (
           <p key={idx} className="font-serif-cormorant italic text-xl sm:text-3xl text-[#584F4C] leading-relaxed whitespace-pre-line text-center">
             {p}

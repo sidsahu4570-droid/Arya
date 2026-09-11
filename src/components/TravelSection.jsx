@@ -18,10 +18,10 @@ export default function TravelSection() {
   };
 
   return (
-    <section id={section.id} className="py-24 sm:py-36 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-[#C86D7C]/15">
+    <section id={section.id} className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-[#C86D7C]/15">
       {/* Chapter Header directly on Paper Canvas */}
-      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-        <div className="inline-flex items-center gap-3 mb-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <div className="inline-flex items-center gap-3 mb-3">
           <span className="text-xs uppercase tracking-widest font-semibold text-[#8C827E]">
             {section.number}
           </span>
@@ -30,7 +30,7 @@ export default function TravelSection() {
             {section.kicker}
           </span>
         </div>
-        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-4">
+        <h2 className="font-serif-cormorant text-4xl sm:text-6xl md:text-7xl font-light text-[#231F20] mb-3">
           {section.heading}
         </h2>
         <p className="font-sans-jakarta text-base sm:text-lg text-[#544C4A] leading-relaxed">
@@ -45,11 +45,11 @@ export default function TravelSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="mb-24 py-10 border-t border-b border-[#C86D7C]/20"
+          className="mb-12 sm:mb-16 py-8 sm:py-10 border-t border-b border-[#C86D7C]/20"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-10">
             {/* Cinematic Image */}
-            <div className="lg:col-span-6 h-[340px] sm:h-[440px] rounded-2xl overflow-hidden relative">
+            <div className="lg:col-span-6 h-[280px] sm:h-[400px] rounded-2xl overflow-hidden relative">
               <img
                 src={destinationImages.Monaco}
                 alt="Monaco"
@@ -57,21 +57,21 @@ export default function TravelSection() {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent lg:hidden" />
-              <div className="absolute bottom-6 left-6 text-white lg:hidden">
-                <span className="font-serif-cormorant text-4xl font-light">Monaco</span>
+              <div className="absolute bottom-4 left-4 text-white lg:hidden">
+                <span className="font-serif-cormorant text-3xl font-light">Monaco</span>
               </div>
             </div>
 
             {/* Content directly on Canvas */}
             <div className="lg:col-span-6 flex flex-col justify-between">
               <div>
-                <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#C86D7C] font-semibold mb-3">
+                <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#C86D7C] font-semibold mb-2">
                   <Star size={16} className="fill-current" />
                   <span>{section.monacoSpotlight.spotlightKicker}</span>
                 </div>
 
-                <div className="mb-6">
-                  <h3 className="font-serif-cormorant text-4xl sm:text-6xl font-normal text-[#231F20] leading-none mb-2">
+                <div className="mb-4">
+                  <h3 className="font-serif-cormorant text-3xl sm:text-5xl font-normal text-[#231F20] leading-none mb-1">
                     {section.monacoSpotlight.title}
                   </h3>
                   <span className="font-serif-cormorant italic text-lg sm:text-xl text-[#C86D7C] block">
@@ -79,12 +79,12 @@ export default function TravelSection() {
                   </span>
                 </div>
 
-                <p className="font-serif-cormorant italic text-xl sm:text-3xl text-[#231F20] leading-relaxed mb-6 font-normal">
+                <p className="font-serif-cormorant italic text-xl sm:text-3xl text-[#231F20] leading-relaxed mb-4 font-normal">
                   {section.monacoSpotlight.monacoQuote}
                 </p>
               </div>
 
-              <p className="font-sans-jakarta text-sm sm:text-base text-[#544C4A] leading-relaxed pt-6 border-t border-[#C86D7C]/15">
+              <p className="font-sans-jakarta text-sm sm:text-base text-[#544C4A] leading-relaxed pt-4 border-t border-[#C86D7C]/15">
                 {section.monacoSpotlight.paragraph}
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function TravelSection() {
       )}
 
       {/* 6 Destinations Grid directly on Canvas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
         {section.destinations.map((dest, idx) => (
           <motion.div
             key={dest.name}
@@ -103,7 +103,7 @@ export default function TravelSection() {
             transition={{ duration: 0.5, delay: idx * 0.08 }}
             className="flex flex-col justify-between"
           >
-            <div className="h-56 rounded-xl overflow-hidden relative mb-4">
+            <div className="h-48 sm:h-56 rounded-xl overflow-hidden relative mb-3">
               <img
                 src={destinationImages[dest.name]}
                 alt={dest.name}
@@ -120,7 +120,7 @@ export default function TravelSection() {
             </div>
 
             <div>
-              <p className="font-serif-cormorant italic text-base text-[#C86D7C] mb-2">
+              <p className="font-serif-cormorant italic text-base text-[#C86D7C] mb-1">
                 {dest.tagline}
               </p>
               <p className="font-sans-jakarta text-sm text-[#544C4A] leading-relaxed">
@@ -133,5 +133,6 @@ export default function TravelSection() {
     </section>
   );
 }
+
 
 
